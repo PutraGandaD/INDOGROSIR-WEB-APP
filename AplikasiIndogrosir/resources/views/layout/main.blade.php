@@ -19,43 +19,43 @@
   <meta name="theme-name" content="mono" />
 
   <!-- GOOGLE FONTS -->
-  <link href="https://fonts.googleapis.com/css?family=Karla:400,700|Roboto" rel="stylesheet">
-  <link href="plugins/material/css/materialdesignicons.min.css" rel="stylesheet" />
-  <link href="plugins/simplebar/simplebar.css" rel="stylesheet" />
+  <link href="{{ asset('https://fonts.googleapis.com/css?family=Karla:400,700|Roboto')}}" rel="stylesheet">
+  <link href="{{ asset('plugins/material/css/materialdesignicons.min.css')}}" rel="stylesheet" />
+  <link href="{{ asset('plugins/simplebar/simplebar.css')}}" rel="stylesheet" />
 
   <!-- PLUGINS CSS STYLE -->
-  <link href="plugins/nprogress/nprogress.css" rel="stylesheet" />
+  <link href="{{ asset('plugins/nprogress/nprogress.css')}}" rel="stylesheet" />
 
 
 
 
-  <link href="plugins/DataTables/DataTables-1.10.18/css/jquery.dataTables.min.css" rel="stylesheet" />
+  <link href="{{ asset('plugins/DataTables/DataTables-1.10.18/css/jquery.dataTables.min.css')}}" rel="stylesheet" />
 
 
 
-  <link href="plugins/jvectormap/jquery-jvectormap-2.0.3.css" rel="stylesheet" />
+  <link href="{{ asset('plugins/jvectormap/jquery-jvectormap-2.0.3.css')}}" rel="stylesheet" />
 
 
 
-  <link href="plugins/daterangepicker/daterangepicker.css" rel="stylesheet" />
+  <link href="{{ asset('plugins/daterangepicker/daterangepicker.css')}}" rel="stylesheet" />
 
 
 
-  <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+  <link href="{{ asset('https://cdn.quilljs.com/1.3.6/quill.snow.css')}}" rel="stylesheet">
 
 
 
-  <link href="plugins/toaster/toastr.min.css" rel="stylesheet" />
+  <link href="{{ asset('plugins/toaster/toastr.min.css')}}" rel="stylesheet" />
 
 
   <!-- MONO CSS -->
-  <link id="main-css-href" rel="stylesheet" href="css/style.css" />
+  <link id="main-css-href" rel="stylesheet" href="{{ asset('css/style.css')}}" />
 
 
 
 
   <!-- FAVICON -->
-  <link href="images/favicon.png" rel="shortcut icon" />
+  <link href="{{ asset('images/favicon.png')}}" rel="shortcut icon" />
 
   <!--
     HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
@@ -65,7 +65,7 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
-  <script src="plugins/nprogress/nprogress.js"></script>
+  <script src="{{ asset('plugins/nprogress/nprogress.js')}}"></script>
 </head>
 
 
@@ -92,8 +92,8 @@
           <div id="sidebar" class="sidebar sidebar-with-footer">
             <!-- Aplication Brand -->
             <div class="app-brand">
-              <a href="/index.html">
-                <img src="images/logo.png" alt="Mono">
+              <a href="{{ asset('/index.html')}}">
+                <img src="{{ asset('images/logo.png')}}" alt="Mono">
                 <span class="brand-name">MONO</span>
               </a>
             </div>
@@ -107,7 +107,7 @@
                   <li
                    class="active"
                    >
-                    <a class="sidenav-item-link" href="index.html">
+                    <a class="sidenav-item-link" href="{{ asset('index.html')}}">
                       <i class="mdi mdi-briefcase-account-outline"></i>
                       <span class="nav-text">Business Dashboard</span>
                     </a>
@@ -119,7 +119,7 @@
 
                   <li
                    >
-                    <a class="sidenav-item-link" href="analytics.html">
+                    <a class="sidenav-item-link" href="{{ asset('analytics.html')}}">
                       <i class="mdi mdi-chart-line"></i>
                       <span class="nav-text">Analytics Dashboard</span>
                     </a>
@@ -139,7 +139,7 @@
 
                   <li
                    >
-                    <a class="sidenav-item-link" href="chat.html">
+                    <a class="sidenav-item-link" href="{{ asset('chat.html')}}">
                       <i class="mdi mdi-wechat"></i>
                       <span class="nav-text">Chat</span>
                     </a>
@@ -151,7 +151,7 @@
 
                   <li
                    >
-                    <a class="sidenav-item-link" href="contacts.html">
+                    <a class="sidenav-item-link" href="{{ asset('contacts.html')}}">
                       <i class="mdi mdi-phone"></i>
                       <span class="nav-text">Contacts</span>
                     </a>
@@ -163,7 +163,7 @@
 
                   <li
                    >
-                    <a class="sidenav-item-link" href="team.html">
+                    <a class="sidenav-item-link" href="{{ asset('team.html')}}">
                       <i class="mdi mdi-account-group"></i>
                       <span class="nav-text">Team</span>
                     </a>
@@ -175,7 +175,7 @@
 
                   <li
                    >
-                    <a class="sidenav-item-link" href="calendar.html">
+                    <a class="sidenav-item-link" href="{{ asset('calendar.html')}}">
                       <i class="mdi mdi-calendar-check"></i>
                       <span class="nav-text">Calendar</span>
                     </a>
@@ -186,7 +186,7 @@
 
 
                   <li  class="has-sub" >
-                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#email"
+                    <a class="sidenav-item-link" href="{{ asset('javascript:void(0)')}}" data-toggle="collapse" data-target="#email"
                       aria-expanded="false" aria-controls="email">
                       <i class="mdi mdi-email"></i>
                       <span class="nav-text">email</span> <b class="caret"></b>
@@ -198,7 +198,7 @@
 
 
                             <li >
-                              <a class="sidenav-item-link" href="email-inbox.html">
+                              <a class="sidenav-item-link" href="{{ asset('email-inbox.html')}}">
                                 <span class="nav-text">Email Inbox</span>
 
                               </a>
@@ -210,7 +210,7 @@
 
 
                             <li >
-                              <a class="sidenav-item-link" href="email-details.html">
+                              <a class="sidenav-item-link" href="{{ asset('email-details.html')}}">
                                 <span class="nav-text">Email Details</span>
 
                               </a>
@@ -222,7 +222,7 @@
 
 
                             <li >
-                              <a class="sidenav-item-link" href="email-compose.html">
+                              <a class="sidenav-item-link" href="{{ asset('email-compose.html')}}">
                                 <span class="nav-text">Email Compose</span>
 
                               </a>
@@ -248,7 +248,7 @@
 
 
                   <li  class="has-sub" >
-                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#ui-elements"
+                    <a class="sidenav-item-link" href="{{ asset('javascript:void(0)')}}" data-toggle="collapse" data-target="#ui-elements"
                       aria-expanded="false" aria-controls="ui-elements">
                       <i class="mdi mdi-folder-outline"></i>
                       <span class="nav-text">UI Components</span> <b class="caret"></b>
@@ -260,7 +260,7 @@
 
 
                             <li >
-                              <a class="sidenav-item-link" href="alert.html">
+                              <a class="sidenav-item-link" href="{{ asset('alert.html')}}">
                                 <span class="nav-text">Alert</span>
 
                               </a>
@@ -272,7 +272,7 @@
 
 
                             <li >
-                              <a class="sidenav-item-link" href="badge.html">
+                              <a class="sidenav-item-link" href="{{ asset('badge.html')}}">
                                 <span class="nav-text">Badge</span>
 
                               </a>
@@ -284,7 +284,7 @@
 
 
                             <li >
-                              <a class="sidenav-item-link" href="breadcrumb.html">
+                              <a class="sidenav-item-link" href="{{ asset('breadcrumb.html')}}">
                                 <span class="nav-text">Breadcrumb</span>
 
                               </a>
@@ -295,7 +295,7 @@
 
 
                         <li  class="has-sub" >
-                          <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#buttons"
+                          <a class="sidenav-item-link" href="{{ asset('javascript:void(0)')}}" data-toggle="collapse" data-target="#buttons"
                             aria-expanded="false" aria-controls="buttons">
                             <span class="nav-text">Buttons</span> <b class="caret"></b>
                           </a>
@@ -303,23 +303,23 @@
                             <div class="sub-menu">
 
                               <li >
-                                <a href="button-default.html">Button Default</a>
+                                <a href="{{ asset('button-default.html')}}">Button Default</a>
                               </li>
 
                               <li >
-                                <a href="button-dropdown.html">Button Dropdown</a>
+                                <a href="{{ asset('button-dropdown.html')}}">Button Dropdown</a>
                               </li>
 
                               <li >
-                                <a href="button-group.html">Button Group</a>
+                                <a href="{{ asset('button-group.html')}}">Button Group</a>
                               </li>
 
                               <li >
-                                <a href="button-social.html">Button Social</a>
+                                <a href="{{ asset('button-social.html')}}">Button Social</a>
                               </li>
 
                               <li >
-                                <a href="button-loading.html">Button Loading</a>
+                                <a href="{{ asset('button-loading.html')}}">Button Loading</a>
                               </li>
 
                             </div>
@@ -331,7 +331,7 @@
 
 
                             <li >
-                              <a class="sidenav-item-link" href="card.html">
+                              <a class="sidenav-item-link" href="{{ asset('card.html')}}">
                                 <span class="nav-text">Card</span>
 
                               </a>
@@ -343,7 +343,7 @@
 
 
                             <li >
-                              <a class="sidenav-item-link" href="carousel.html">
+                              <a class="sidenav-item-link" href="{{ asset('carousel.html')}}">
                                 <span class="nav-text">Carousel</span>
 
                               </a>
@@ -355,7 +355,7 @@
 
 
                             <li >
-                              <a class="sidenav-item-link" href="collapse.html">
+                              <a class="sidenav-item-link" href="{{ asset('collapse.html')}}">
                                 <span class="nav-text">Collapse</span>
 
                               </a>
@@ -367,7 +367,7 @@
 
 
                             <li >
-                              <a class="sidenav-item-link" href="editor.html">
+                              <a class="sidenav-item-link" href="{{ asset('editor.html')}}">
                                 <span class="nav-text">Editor</span>
 
                               </a>
@@ -379,7 +379,7 @@
 
 
                             <li >
-                              <a class="sidenav-item-link" href="list-group.html">
+                              <a class="sidenav-item-link" href="{{ asset('list-group.html')}}">
                                 <span class="nav-text">List Group</span>
 
                               </a>
@@ -391,7 +391,7 @@
 
 
                             <li >
-                              <a class="sidenav-item-link" href="modal.html">
+                              <a class="sidenav-item-link" href="{{ asset('modal.html')}}">
                                 <span class="nav-text">Modal</span>
 
                               </a>
@@ -403,7 +403,7 @@
 
 
                             <li >
-                              <a class="sidenav-item-link" href="pagination.html">
+                              <a class="sidenav-item-link" href="{{ asset('pagination.html')}}">
                                 <span class="nav-text">Pagination</span>
 
                               </a>
@@ -415,7 +415,7 @@
 
 
                             <li >
-                              <a class="sidenav-item-link" href="popover-tooltip.html">
+                              <a class="sidenav-item-link" href="{{ asset('popover-tooltip.html')}}">
                                 <span class="nav-text">Popover & Tooltip</span>
 
                               </a>
@@ -427,7 +427,7 @@
 
 
                             <li >
-                              <a class="sidenav-item-link" href="progress-bar.html">
+                              <a class="sidenav-item-link" href="{{ asset('progress-bar.html')}}">
                                 <span class="nav-text">Progress Bar</span>
 
                               </a>
@@ -439,9 +439,8 @@
 
 
                             <li >
-                              <a class="sidenav-item-link" href="spinner.html">
+                              <a class="sidenav-item-link" href="{{ asset('spinner.html')}}">
                                 <span class="nav-text">Spinner</span>
-
                               </a>
                             </li>
 
@@ -451,7 +450,8 @@
 
 
                             <li >
-                              <a class="sidenav-item-link" href="switches.html">
+
+                              <a class="sidenav-item-link" href="{{ asset('switches.html')}}">
                                 <span class="nav-text">Switches</span>
 
                               </a>
@@ -462,7 +462,7 @@
 
 
                         <li  class="has-sub" >
-                          <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#tables"
+                          <a class="sidenav-item-link" href="{{ asset('javascript:void(0)')}}" data-toggle="collapse" data-target="#tables"
                             aria-expanded="false" aria-controls="tables">
                             <span class="nav-text">Tables</span> <b class="caret"></b>
                           </a>
@@ -470,11 +470,11 @@
                             <div class="sub-menu">
 
                               <li >
-                                <a href="bootstarp-tables.html">Bootstrap Tables</a>
+                                <a href="{{ asset('bootstarp-tables.html')}}">Bootstrap Tables</a>
                               </li>
 
                               <li >
-                                <a href="data-tables.html">Data Tables</a>
+                                <a href="{{ asset('data-tables.html')}}">Data Tables</a>
                               </li>
 
                             </div>
@@ -482,11 +482,8 @@
                         </li>
 
 
-
-
-
                             <li >
-                              <a class="sidenav-item-link" href="tab.html">
+                              <a class="sidenav-item-link" href="{{ asset('tab.html')}}">
                                 <span class="nav-text">Tab</span>
 
                               </a>
@@ -498,7 +495,7 @@
 
 
                             <li >
-                              <a class="sidenav-item-link" href="toaster.html">
+                              <a class="sidenav-item-link" href="{{ asset('toaster.html')}}">
                                 <span class="nav-text">Toaster</span>
 
                               </a>
@@ -509,7 +506,7 @@
 
 
                         <li  class="has-sub" >
-                          <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#icons"
+                          <a class="sidenav-item-link" href="{{ asset('javascript:void(0)')}}" data-toggle="collapse" data-target="#icons"
                             aria-expanded="false" aria-controls="icons">
                             <span class="nav-text">Icons</span> <b class="caret"></b>
                           </a>
@@ -517,11 +514,11 @@
                             <div class="sub-menu">
 
                               <li >
-                                <a href="material-icons.html">Material Icon</a>
+                                <a href="{{ asset('material-icons.html')}}">Material Icon</a>
                               </li>
 
                               <li >
-                                <a href="flag-icons.html">Flag Icon</a>
+                                <a href="{{ asset('flag-icons.html')}}">Flag Icon</a>
                               </li>
 
                             </div>
@@ -532,7 +529,7 @@
 
 
                         <li  class="has-sub" >
-                          <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#forms"
+                          <a class="sidenav-item-link" href="{{ asset('javascript:void(0)')}}" data-toggle="collapse" data-target="#forms"
                             aria-expanded="false" aria-controls="forms">
                             <span class="nav-text">Forms</span> <b class="caret"></b>
                           </a>
@@ -540,23 +537,23 @@
                             <div class="sub-menu">
 
                               <li >
-                                <a href="basic-input.html">Basic Input</a>
+                                <a href="{{ asset('basic-input.html')}}">Basic Input</a>
                               </li>
 
                               <li >
-                                <a href="input-group.html">Input Group</a>
+                                <a href="{{ asset('input-group.html')}}">Input Group</a>
                               </li>
 
                               <li >
-                                <a href="checkbox-radio.html">Checkbox & Radio</a>
+                                <a href="{{ asset('checkbox-radio.html')}}">Checkbox & Radio</a>
                               </li>
 
                               <li >
-                                <a href="form-validation.html">Form Validation</a>
+                                <a href="{{ asset('form-validation.html')}}">Form Validation</a>
                               </li>
 
                               <li >
-                                <a href="form-advance.html">Form Advance</a>
+                                <a href="{{ asset('form-advance.html')}}">Form Advance</a>
                               </li>
 
                             </div>
@@ -564,10 +561,8 @@
                         </li>
 
 
-
-
                         <li  class="has-sub" >
-                          <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#maps"
+                          <a class="sidenav-item-link" href="{{ asset('javascript:void(0)')}}" data-toggle="collapse" data-target="#maps"
                             aria-expanded="false" aria-controls="maps">
                             <span class="nav-text">Maps</span> <b class="caret"></b>
                           </a>
@@ -575,11 +570,11 @@
                             <div class="sub-menu">
 
                               <li >
-                                <a href="google-maps.html">Google Map</a>
+                                <a href="{{ asset('google-maps.html')}}">Google Map</a>
                               </li>
 
                               <li >
-                                <a href="vector-maps.html">Vector Map</a>
+                                <a href="{{ asset('vector-maps.html')}}">Vector Map</a>
                               </li>
 
                             </div>
@@ -590,7 +585,7 @@
 
 
                         <li  class="has-sub" >
-                          <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#widgets"
+                          <a class="sidenav-item-link" href="{{ asset('javascript:void(0)')}}" data-toggle="collapse" data-target="#widgets"
                             aria-expanded="false" aria-controls="widgets">
                             <span class="nav-text">Widgets</span> <b class="caret"></b>
                           </a>
@@ -598,11 +593,11 @@
                             <div class="sub-menu">
 
                               <li >
-                                <a href="widgets-general.html">General Widget</a>
+                                <a href="{{ asset('widgets-general.html')}}">General Widget</a>
                               </li>
 
                               <li >
-                                <a href="widgets-chart.html">Chart Widget</a>
+                                <a href="{{ asset('widgets-chart.html')}}">Chart Widget</a>
                               </li>
 
                             </div>
@@ -620,7 +615,7 @@
 
 
                   <li  class="has-sub" >
-                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#charts"
+                    <a class="sidenav-item-link" href="{{ asset('javascript:void(0)')}}" data-toggle="collapse" data-target="#charts"
                       aria-expanded="false" aria-controls="charts">
                       <i class="mdi mdi-chart-pie"></i>
                       <span class="nav-text">Charts</span> <b class="caret"></b>
@@ -632,7 +627,7 @@
 
 
                             <li >
-                              <a class="sidenav-item-link" href="apex-charts.html">
+                              <a class="sidenav-item-link" href="{{ asset('apex-charts.html')}}">
                                 <span class="nav-text">Apex Charts</span>
 
                               </a>
@@ -658,7 +653,7 @@
 
 
                   <li  class="has-sub" >
-                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#users"
+                    <a class="sidenav-item-link" href="{{ asset('javascript:void(0)')}}" data-toggle="collapse" data-target="#users"
                       aria-expanded="false" aria-controls="users">
                       <i class="mdi mdi-image-filter-none"></i>
                       <span class="nav-text">User</span> <b class="caret"></b>
@@ -670,7 +665,7 @@
 
 
                             <li >
-                              <a class="sidenav-item-link" href="user-profile.html">
+                              <a class="sidenav-item-link" href="{{ asset('user-profile.html')}}">
                                 <span class="nav-text">User Profile</span>
 
                               </a>
@@ -682,7 +677,7 @@
 
 
                             <li >
-                              <a class="sidenav-item-link" href="user-activities.html">
+                              <a class="sidenav-item-link" href="{{ asset('user-activities.html')}}">
                                 <span class="nav-text">User Activities</span>
 
                               </a>
@@ -694,7 +689,7 @@
 
 
                             <li >
-                              <a class="sidenav-item-link" href="user-profile-settings.html">
+                              <a class="sidenav-item-link" href="{{ asset('user-profile-settings.html')}}">
                                 <span class="nav-text">User Profile Settings</span>
 
                               </a>
@@ -706,7 +701,7 @@
 
 
                             <li >
-                              <a class="sidenav-item-link" href="user-account-settings.html">
+                              <a class="sidenav-item-link" href="{{ asset('user-account-settings.html')}}">
                                 <span class="nav-text">User Account Settings</span>
 
                               </a>
@@ -718,7 +713,7 @@
 
 
                             <li >
-                              <a class="sidenav-item-link" href="user-planing-settings.html">
+                              <a class="sidenav-item-link" href="{{ asset('user-planing-settings.html')}}">
                                 <span class="nav-text">User Planing Settings</span>
 
                               </a>
@@ -730,7 +725,7 @@
 
 
                             <li >
-                              <a class="sidenav-item-link" href="user-billing.html">
+                              <a class="sidenav-item-link" href="{{ asset('user-billing.html')}}">
                                 <span class="nav-text">User billing</span>
 
                               </a>
@@ -742,7 +737,7 @@
 
 
                             <li >
-                              <a class="sidenav-item-link" href="user-notify-settings.html">
+                              <a class="sidenav-item-link" href="{{ asset('user-notify-settings.html')}}">
                                 <span class="nav-text">User Notify Settings</span>
 
                               </a>
@@ -760,7 +755,7 @@
 
 
                   <li  class="has-sub" >
-                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#authentication"
+                    <a class="sidenav-item-link" href="{{ asset('javascript:void(0)')}}" data-toggle="collapse" data-target="#authentication"
                       aria-expanded="false" aria-controls="authentication">
                       <i class="mdi mdi-account"></i>
                       <span class="nav-text">Authentication</span> <b class="caret"></b>
@@ -772,7 +767,7 @@
 
 
                             <li >
-                              <a class="sidenav-item-link" href="sign-in.html">
+                              <a class="sidenav-item-link" href="{{ asset('sign-in.html')}}">
                                 <span class="nav-text">Sign In</span>
 
                               </a>
@@ -784,7 +779,7 @@
 
 
                             <li >
-                              <a class="sidenav-item-link" href="sign-up.html">
+                              <a class="sidenav-item-link" href="{{ asset('sign-up.html')}}">
                                 <span class="nav-text">Sign Up</span>
 
                               </a>
@@ -796,7 +791,7 @@
 
 
                             <li >
-                              <a class="sidenav-item-link" href="reset-password.html">
+                              <a class="sidenav-item-link" href="{{ asset('reset-password.html')}}">
                                 <span class="nav-text">Reset Password</span>
 
                               </a>
@@ -814,7 +809,7 @@
 
 
                   <li  class="has-sub" >
-                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#other-page"
+                    <a class="sidenav-item-link" href="{{ asset('javascript:void(0)')}}" data-toggle="collapse" data-target="#other-page"
                       aria-expanded="false" aria-controls="other-page">
                       <i class="mdi mdi-file-multiple"></i>
                       <span class="nav-text">Other pages</span> <b class="caret"></b>
@@ -826,7 +821,7 @@
 
 
                             <li >
-                              <a class="sidenav-item-link" href="invoice.html">
+                              <a class="sidenav-item-link" href="{{ asset('invoice.html')}}">
                                 <span class="nav-text">Invoice</span>
 
                               </a>
@@ -838,7 +833,7 @@
 
 
                             <li >
-                              <a class="sidenav-item-link" href="404.html">
+                              <a class="sidenav-item-link" href="{{ asset('404.html')}}">
                                 <span class="nav-text">404 page</span>
 
                               </a>
@@ -850,7 +845,7 @@
 
 
                             <li >
-                              <a class="sidenav-item-link" href="page-comingsoon.html">
+                              <a class="sidenav-item-link" href="{{ asset('page-comingsoon.html')}}">
                                 <span class="nav-text">Coming Soon</span>
 
                               </a>
@@ -862,7 +857,7 @@
 
 
                             <li >
-                              <a class="sidenav-item-link" href="page-maintenance.html">
+                              <a class="sidenav-item-link" href="{{ asset('page-maintenance.html')}}">
                                 <span class="nav-text">Maintenance</span>
 
                               </a>
@@ -889,7 +884,7 @@
 
                   <li
                    >
-                    <a class="sidenav-item-link" href="getting-started.html">
+                    <a class="sidenav-item-link" href="{{ asset('getting-started.html')}}">
                       <i class="mdi mdi-airplane"></i>
                       <span class="nav-text">Getting Started</span>
                     </a>
@@ -900,7 +895,7 @@
 
 
                   <li  class="has-sub" >
-                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#customization"
+                    <a class="sidenav-item-link" href="{{ asset('javascript:void(0)')}}" data-toggle="collapse" data-target="#customization"
                       aria-expanded="false" aria-controls="customization">
                       <i class="mdi mdi-square-edit-outline"></i>
                       <span class="nav-text">Customization</span> <b class="caret"></b>
@@ -912,7 +907,7 @@
 
 
                             <li >
-                              <a class="sidenav-item-link" href="navbar-customization.html">
+                              <a class="sidenav-item-link" href="{{ asset('navbar-customization.html')}}">
                                 <span class="nav-text">Navbar</span>
 
                               </a>
@@ -924,7 +919,7 @@
 
 
                             <li >
-                              <a class="sidenav-item-link" href="sidebar-customization.html">
+                              <a class="sidenav-item-link" href="{{ asset('sidebar-customization.html')}}">
                                 <span class="nav-text">Sidebar</span>
 
                               </a>
@@ -936,7 +931,7 @@
 
 
                             <li >
-                              <a class="sidenav-item-link" href="styling.html">
+                              <a class="sidenav-item-link" href="{{ asset('styling.html')}}">
                                 <span class="nav-text">Styling</span>
 
                               </a>
@@ -952,16 +947,15 @@
 
 
               </ul>
-
             </div>
 
             <div class="sidebar-footer">
               <div class="sidebar-footer-content">
                 <ul class="d-flex">
                   <li>
-                    <a href="user-account-settings.html" data-toggle="tooltip" title="Profile settings"><i class="mdi mdi-settings"></i></a></li>
+                    <a href="{{ asset('user-account-settings.html')}}" data-toggle="tooltip" title="Profile settings"><i class="mdi mdi-settings"></i></a></li>
                   <li>
-                    <a href="#" data-toggle="tooltip" title="No chat messages"><i class="mdi mdi-chat-processing"></i></a>
+                    <a href="{{ asset('#')}}" data-toggle="tooltip" title="No chat messages"><i class="mdi mdi-chat-processing"></i></a>
                   </li>
                 </ul>
               </div>
@@ -1001,16 +995,16 @@
                   <ul class="dropdown-menu dropdown-menu-search">
 
                     <li class="nav-item">
-                      <a class="nav-link" href="index.html">Morbi leo risus</a>
+                      <a class="nav-link" href="{{ asset('index.html')}}">Morbi leo risus</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="index.html">Dapibus ac facilisis in</a>
+                      <a class="nav-link" href="{{ asset('index.html')}}">Dapibus ac facilisis in</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="index.html">Porta ac consectetur ac</a>
+                      <a class="nav-link" href="{{ asset('index.html')}}">Porta ac consectetur ac</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="index.html">Vestibulum at eros</a>
+                      <a class="nav-link" href="{{ asset('index.html')}}">Vestibulum at eros</a>
                     </li>
 
                   </ul>
@@ -1020,7 +1014,7 @@
                 <ul class="nav navbar-nav">
                   <!-- Offcanvas -->
                   <li class="custom-dropdown">
-                    <a class="offcanvas-toggler active custom-dropdown-toggler" data-offcanvas="contact-off" href="javascript:" >
+                    <a class="offcanvas-toggler active custom-dropdown-toggler" data-offcanvas="contact-off" href="{{ asset('javascript:')}}" >
                       <i class="mdi mdi-contacts icon"></i>
                     </a>
                   </li>
@@ -1033,11 +1027,11 @@
 
                       <header>
                         <div class="nav nav-underline" id="nav-tab" role="tablist">
-                          <a class="nav-item nav-link active" id="all-tabs" data-toggle="tab" href="#all" role="tab" aria-controls="nav-home"
+                          <a class="nav-item nav-link active" id="all-tabs" data-toggle="tab" href="{{ asset('#all')}}" role="tab" aria-controls="nav-home"
                             aria-selected="true">All (5)</a>
-                          <a class="nav-item nav-link" id="message-tab" data-toggle="tab" href="#message" role="tab" aria-controls="nav-profile"
+                          <a class="nav-item nav-link" id="message-tab" data-toggle="tab" href="{{ asset('#message')}}" role="tab" aria-controls="nav-profile"
                             aria-selected="false">Msgs (4)</a>
-                          <a class="nav-item nav-link" id="other-tab" data-toggle="tab" href="#other" role="tab" aria-controls="nav-contact"
+                          <a class="nav-item nav-link" id="other-tab" data-toggle="tab" href="{{ asset('#other')}}" role="tab" aria-controls="nav-contact"
                             aria-selected="false">Others (3)</a>
                         </div>
                       </header>
@@ -1049,12 +1043,12 @@
 
                             <div class="media media-sm bg-warning-10 p-4 mb-0">
                               <div class="media-sm-wrapper">
-                                <a href="user-profile.html">
+                                <a href="{{ asset('user-profile.html')}}">
                                   <img src="images/user/user-sm-02.jpg" alt="User Image">
                                 </a>
                               </div>
                               <div class="media-body">
-                                <a href="user-profile.html">
+                                <a href="{{ asset('user-profile.html')}}">
                                   <span class="title mb-0">John Doe</span>
                                   <span class="discribe">Extremity sweetness difficult behaviour he of. On disposal of as landlord horrible. Afraid at highly months do things on at.</span>
                                   <span class="time">
@@ -1066,12 +1060,12 @@
 
                             <div class="media media-sm p-4 bg-light mb-0">
                               <div class="media-sm-wrapper bg-primary">
-                                <a href="user-profile.html">
+                                <a href="{{ asset('user-profile.html')}}">
                                   <i class="mdi mdi-calendar-check-outline"></i>
                                 </a>
                               </div>
                               <div class="media-body">
-                                <a href="user-profile.html">
+                                <a href="{{ asset('user-profile.html')}}">
                                   <span class="title mb-0">New event added</span>
                                   <span class="discribe">1/3/2014 (1pm - 2pm)</span>
                                   <span class="time">
@@ -1083,12 +1077,12 @@
 
                             <div class="media media-sm p-4 mb-0">
                               <div class="media-sm-wrapper">
-                                <a href="user-profile.html">
+                                <a href="{{ asset('user-profile.html')}}">
                                   <img src="images/user/user-sm-03.jpg" alt="User Image">
                                 </a>
                               </div>
                               <div class="media-body">
-                                <a href="user-profile.html">
+                                <a href="{{ asset('user-profile.html')}}">
                                   <span class="title mb-0">Sagge Hudson</span>
                                   <span class="discribe">On disposal of as landlord Afraid at highly months do things on at.</span>
                                   <span class="time">
@@ -1100,17 +1094,17 @@
 
                             <div class="media media-sm p-4 mb-0">
                               <div class="media-sm-wrapper bg-info-dark">
-                                <a href="user-profile.html">
+                                <a href="{{ asset('user-profile.html')}}">
                                   <i class="mdi mdi-account-multiple-check"></i>
                                 </a>
                               </div>
                               <div class="media-body">
-                                <a href="user-profile.html">
+                                <a href="{{ asset('user-profile.html')}}">
                                   <span class="title mb-0">Add request</span>
                                   <span class="discribe">Add Dany Jones as your contact.</span>
                                   <div class="buttons">
-                                    <a href="#" class="btn btn-sm btn-success shadow-none text-white">accept</a>
-                                    <a href="#" class="btn btn-sm shadow-none">delete</a>
+                                    <a href="{{ asset('#')}}" class="btn btn-sm btn-success shadow-none text-white">accept</a>
+                                    <a href="{{ asset('#')}}" class="btn btn-sm shadow-none">delete</a>
                                   </div>
                                   <span class="time">
                                     <time>6 hrs ago</time>...
@@ -1121,12 +1115,12 @@
 
                             <div class="media media-sm p-4 mb-0">
                               <div class="media-sm-wrapper bg-info">
-                                <a href="user-profile.html">
+                                <a href="{{ asset('user-profile.html')}}">
                                   <i class="mdi mdi-playlist-check"></i>
                                 </a>
                               </div>
                               <div class="media-body">
-                                <a href="user-profile.html">
+                                <a href="{{ asset('user-profile.html')}}">
                                   <span class="title mb-0">Task complete</span>
                                   <span class="discribe">Afraid at highly months do things on at.</span>
                                   <span class="time">
@@ -1142,12 +1136,12 @@
 
                             <div class="media media-sm p-4 mb-0">
                               <div class="media-sm-wrapper">
-                                <a href="user-profile.html">
+                                <a href="{{ asset('user-profile.html')}}">
                                   <img src="images/user/user-sm-01.jpg" alt="User Image">
                                 </a>
                               </div>
                               <div class="media-body">
-                                <a href="user-profile.html">
+                                <a href="{{ asset('user-profile.html')}}">
                                   <span class="title mb-0">Selena Wagner</span>
                                   <span class="discribe">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
                                   <span class="time">
@@ -1159,12 +1153,12 @@
 
                             <div class="media media-sm p-4 mb-0">
                               <div class="media-sm-wrapper">
-                                <a href="user-profile.html">
+                                <a href="{{ asset('user-profile.html')}}">
                                   <img src="images/user/user-sm-03.jpg" alt="User Image">
                                 </a>
                               </div>
                               <div class="media-body">
-                                <a href="user-profile.html">
+                                <a href="{{ asset('user-profile.html')}}">
                                   <span class="title mb-0">Sagge Hudson</span>
                                   <span class="discribe">On disposal of as landlord Afraid at highly months do things on at.</span>
                                   <span class="time">
@@ -1176,12 +1170,12 @@
 
                             <div class="media media-sm bg-warning-10 p-4 mb-0">
                               <div class="media-sm-wrapper">
-                                <a href="user-profile.html">
+                                <a href="{{ asset('user-profile.html')}}">
                                   <img src="images/user/user-sm-02.jpg" alt="User Image">
                                 </a>
                               </div>
                               <div class="media-body">
-                                <a href="user-profile.html">
+                                <a href="{{ asset('user-profile.html')}}">
                                   <span class="title mb-0">John Doe</span>
                                   <span class="discribe">Extremity sweetness difficult behaviour he of. On disposal of as landlord horrible. Afraid
                                     at highly months do things on at.</span>
@@ -1194,12 +1188,12 @@
 
                             <div class="media media-sm p-4 mb-0">
                               <div class="media-sm-wrapper">
-                                <a href="user-profile.html">
+                                <a href="{{ asset('user-profile.html')}}">
                                   <img src="images/user/user-sm-04.jpg" alt="User Image">
                                 </a>
                               </div>
                               <div class="media-body">
-                                <a href="user-profile.html">
+                                <a href="{{ asset('user-profile.html')}}">
                                   <span class="title mb-0">Albrecht Straub</span>
                                   <span class="discribe"> Beatae quia natus assumenda laboriosam, nisi perferendis aliquid consectetur expedita non tenetur.</span>
                                   <span class="time">
@@ -1214,12 +1208,12 @@
 
                             <div class="media media-sm p-4 bg-light mb-0">
                               <div class="media-sm-wrapper bg-primary">
-                                <a href="user-profile.html">
+                                <a href="{{ asset('user-profile.html')}}">
                                   <i class="mdi mdi-calendar-check-outline"></i>
                                 </a>
                               </div>
                               <div class="media-body">
-                                <a href="user-profile.html">
+                                <a href="{{ asset('user-profile.html')}}">
                                   <span class="title mb-0">New event added</span>
                                   <span class="discribe">1/3/2014 (1pm - 2pm)</span>
                                   <span class="time">
@@ -1231,17 +1225,17 @@
 
                             <div class="media media-sm p-4 mb-0">
                               <div class="media-sm-wrapper bg-info-dark">
-                                <a href="user-profile.html">
+                                <a href="{{ asset('user-profile.html')}}">
                                   <i class="mdi mdi-account-multiple-check"></i>
                                 </a>
                               </div>
                               <div class="media-body">
-                                <a href="user-profile.html">
+                                <a href="{{ asset('user-profile.html')}}">
                                   <span class="title mb-0">Add request</span>
                                   <span class="discribe">Add Dany Jones as your contact.</span>
                                   <div class="buttons">
-                                    <a href="#" class="btn btn-sm btn-success shadow-none text-white">accept</a>
-                                    <a href="#" class="btn btn-sm shadow-none">delete</a>
+                                    <a href="{{ asset('#')}}" class="btn btn-sm btn-success shadow-none text-white">accept</a>
+                                    <a href="{{ asset('#')}}" class="btn btn-sm shadow-none">delete</a>
                                   </div>
                                   <span class="time">
                                     <time>6 hrs ago</time>...
@@ -1252,12 +1246,12 @@
 
                             <div class="media media-sm p-4 mb-0">
                               <div class="media-sm-wrapper bg-info">
-                                <a href="user-profile.html">
+                                <a href="{{ asset('user-profile.html')}}">
                                   <i class="mdi mdi-playlist-check"></i>
                                 </a>
                               </div>
                               <div class="media-body">
-                                <a href="user-profile.html">
+                                <a href="{{ asset('user-profile.html')}}">
                                   <span class="title mb-0">Task complete</span>
                                   <span class="discribe">Afraid at highly months do things on at.</span>
                                   <span class="time">
@@ -1274,7 +1268,7 @@
                       <footer class="border-top dropdown-notify-footer">
                         <div class="d-flex justify-content-between align-items-center py-2 px-4">
                           <span>Last updated 3 min ago</span>
-                          <a id="refress-button" href="javascript:" class="btn mdi mdi-cached btn-refress"></a>
+                          <a id="refress-button" href="{{ asset('javascript:')}}" class="btn mdi mdi-cached btn-refress"></a>
                         </div>
                       </footer>
                     </div>
@@ -1287,20 +1281,20 @@
                     </button>
                     <ul class="dropdown-menu dropdown-menu-right">
                       <li>
-                        <a class="dropdown-link-item" href="user-profile.html">
+                        <a class="dropdown-link-item" href="{{ asset('user-profile.html')}}">
                           <i class="mdi mdi-account-outline"></i>
                           <span class="nav-text">My Profile</span>
                         </a>
                       </li>
                       <li>
-                        <a class="dropdown-link-item" href="email-inbox.html">
+                        <a class="dropdown-link-item" href="{{ asset('email-inbox.html')}}">
                           <i class="mdi mdi-email-outline"></i>
                           <span class="nav-text">Message</span>
                           <span class="badge badge-pill badge-primary">24</span>
                         </a>
                       </li>
                       <li>
-                        <a class="dropdown-link-item" href="user-activities.html">
+                        <a class="dropdown-link-item" href="{{ asset('user-activities.html')}}">
                           <i class="mdi mdi-diamond-stone"></i>
                           <span class="nav-text">Activitise</span></a>
                       </li>
