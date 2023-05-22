@@ -1294,23 +1294,20 @@
                         </a>
                       </li>
                       <li>
-<<<<<<< HEAD
-                        <a class="dropdown-link-item" href="{{ asset('user-activities.html')}}">
-=======
-                        <a class="dropdown-link-item" href="{{ asset (user-activities.html) }}">
->>>>>>> c353e1502ffe5352283935ea744648a0e338cfe5
+
+                        <a class="dropdown-link-item" href="{{ asset ('user-activities.html') }}">
                           <i class="mdi mdi-diamond-stone"></i>
                           <span class="nav-text">Activitise</span></a>
                       </li>
                       <li>
-                        <a class="dropdown-link-item" href="{{ asset (user-account-settings.html) }}">
+                        <a class="dropdown-link-item" href="{{ asset ('user-account-settings.html') }}">
                           <i class="mdi mdi-settings"></i>
                           <span class="nav-text">Account Setting</span>
                         </a>
                       </li>
 
                       <li class="dropdown-footer">
-                        <a class="dropdown-link-item" href="{{ asset (sign-in.html) }}"> <i class="mdi mdi-logout"></i> Log Out </a>
+                        <a class="dropdown-link-item" href="{{ asset ('sign-in.html') }}"> <i class="mdi mdi-logout"></i> Log Out </a>
                       </li>
                     </ul>
                   </li>
