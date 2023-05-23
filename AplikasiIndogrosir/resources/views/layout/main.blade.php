@@ -13,7 +13,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Mono - Responsive Admin & Dashboard Template</title>
+  <title>INDOGROSIR APP</title>
 
   <!-- theme meta -->
   <meta name="theme-name" content="mono" />
@@ -94,7 +94,7 @@
             <div class="app-brand">
               <a href="{{ asset('/index.html')}}">
                 <img src="{{ asset('images/logo.png')}}" alt="Mono">
-                <span class="brand-name">MONO</span>
+                <span class="brand-name">INDOGROSIR</span>
               </a>
             </div>
             <!-- begin sidebar scrollbar -->
@@ -121,7 +121,7 @@
                    >
                     <a class="sidenav-item-link" href="{{ asset('analytics.html')}}">
                       <i class="mdi mdi-chart-line"></i>
-                      <span class="nav-text">Analytics Dashboard</span>
+                      <span class="nav-text">Indogrosir Dashboard</span>
                     </a>
                   </li>
 
