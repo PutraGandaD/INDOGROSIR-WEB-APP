@@ -1132,6 +1132,25 @@
 
                           </div>
 
+                          <div class="tab-pane fade" id="message" role="tabpanel" aria-labelledby="message-tab">
+
+                            <div class="media media-sm p-4 mb-0">
+                              <div class="media-sm-wrapper">
+                                <a href="{{ asset('user-profile.html')}}">
+                                  <img src="images/user/user-sm-01.jpg" alt="User Image">
+                                </a>
+                              </div>
+                              <div class="media-body">
+                                <a href="{{ asset('user-profile.html')}}">
+                                  <span class="title mb-0">Selena Wagner</span>
+                                  <span class="discribe">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
+                                  <span class="time">
+                                    <time>15 min ago</time>...
+                                  </span>
+                                </a>
+                              </div>
+                            </div>
+
                             <div class="media media-sm p-4 mb-0">
                               <div class="media-sm-wrapper">
                                 <a href="{{ asset('user-profile.html')}}">
@@ -2142,7 +2161,123 @@
                       </div>
                     </div>
 
-                  </div>
+                </div>
+                <div class="col-xl-4">
+
+                      <!-- Chat -->
+                      <div class="card card-default chat">
+                        <div class="card-header">
+                          <h2>Selena Wagner</h2>
+                          <div class="dropdown dropdown-chat-state">
+                            <button class="dropdown-toggle btn btn-primary btn-rounded-circle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
+                              <i class="mdi mdi-account-alert"></i>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                              <li>
+                                <a href="{{ asset ('#') }}" class="user-link">
+                                  <img src="images/user/user-sm-01.jpg" alt="User Image">
+                                  <span class="username">anna patuary
+                                    <span class="badge badge-secondary">18</span>
+                                  </span>
+                                  <span class="state active">
+                                    <i class="mdi mdi-circle-medium"></i>
+                                  </span>
+                                </a>
+                              </li>
+                              <li>
+                                <a href="{{ asset ('#') }}" class="user-link">
+                                  <img src="images/user/user-sm-02.jpg" alt="User Image">
+                                  <span class="username">riman Ghose
+                                    <span class="badge badge-secondary">18</span>
+                                  </span>
+                                  <span class="state">
+                                    1hrs
+                                  </span>
+                                </a>
+                              </li>
+                              <li>
+                                <a href="{{ asset ('#') }}" class="user-link">
+                                  <img src="images/user/user-sm-03.jpg" alt="User Image">
+                                  <span class="username">riman Ghose
+                                    <span class="badge badge-secondary">18</span>
+                                  </span>
+                                  <span class="state">
+                                    1hrs
+                                  </span>
+                                </a>
+                              </li>
+                              <li>
+                                <a href="{{ asset ('#') }}" class="user-link">
+                                  <img src="images/user/user-sm-04.jpg" alt="User Image">
+                                  <span class="username">riman Ghose
+                                    <span class="badge badge-secondary">18</span>
+                                  </span>
+                                  <span class="state">
+                                    1hrs
+                                  </span>
+                                </a>
+                              </li>
+                              <li>
+                                <a href="{{ asset ('#') }}" class="user-link">
+                                  <img src="images/user/user-sm-05.jpg" alt="User Image">
+                                  <span class="username">riman Ghose</span>
+                                  <span class="state">15min</span>
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="card-body pb-0" data-simplebar style="height: 363px;">
+                          <!-- Media Chat Left -->
+                          <div class="media media-chat">
+                            <img src="images/user/user-sm-01.jpg" class="rounded-circle" alt="Avata Image">
+                            <div class="media-body">
+                              <div class="text-content">
+                                <span class="message">Hello my name is anna.</span>
+                                <time class="time">5 mins ago</time>
+                              </div>
+                            </div>
+                          </div>
+
+                          <!-- Media Chat Right -->
+                          <div class="media media-chat media-chat-right">
+                            <div class="media-body">
+                              <div class="text-content">
+                                <span class="message">Hello i am Riman.</span>
+                                <time class="time">4 mins ago</time>
+                              </div>
+                              <div class="text-content">
+                                <span class="message">I want to know about yourself</span>
+                                <time class="time">3 mins ago</time>
+                              </div>
+                            </div>
+                            <img src="images/user/user-sm-02.jpg" class="rounded-circle" alt="Avata Image">
+                          </div>
+
+                          <!-- Media Chat Left -->
+                          <div class="media media-chat">
+                            <img src="images/user/user-sm-01.jpg" class="rounded-circle" alt="Avata Image">
+                            <div class="media-body">
+                              <div class="text-content">
+                                <span class="message">Its had resolving otherwise she contented therefore.</span>
+                                <time class="time">1 mins ago</time>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="chat-footer">
+                          <form>
+                            <div class="input-group input-group-chat">
+                              <div class="input-group-prepend">
+                                <span class="emoticon-icon mdi mdi-emoticon-happy-outline"></span>
+                              </div>
+                              <input type="text" class="form-control" aria-label="Text input with dropdown button">
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+
+                </div>
               </div>
 
               <!-- Stock Modal -->
@@ -2301,6 +2436,21 @@
                         <div class="media media-sm">
                           <div class="media-sm-wrapper">
                             <a href="{{ url('user-profile.html') }}">
+                              <img src="images/user/user-sm-01.jpg" alt="User Image">
+                              <span class="active bg-primary"></span>
+                            </a>
+                          </div>
+                          <div class="media-body">
+                            <a href="{{ url('user-profile.html') }}">
+                              <span class="title">Selena Wagner</span>
+                              <span class="discribe">Designer</span>
+                            </a>
+                          </div>
+                        </div>
+
+                        <div class="media media-sm">
+                          <div class="media-sm-wrapper">
+                            <a href="{{ url('user-profile.html') }}">
                               <img src="images/user/user-sm-02.jpg" alt="User Image">
                               <span class="active bg-primary"></span>
                             </a>
@@ -2356,6 +2506,22 @@
                             </a>
                           </div>
                         </div>
+
+                        <div class="media media-sm">
+                          <div class="media-sm-wrapper">
+                            <a href="{{ url('user-profile.html') }}">
+                              <img src="images/user/user-sm-06.jpg" alt="User Image">
+                              <span class="active bg-primary"></span>
+                            </a>
+                          </div>
+                          <div class="media-body">
+                            <a href="{{ url('user-profile.html') }}">
+                              <span class="title">Selena Wagner</span>
+                              <span>Photographer</span>
+                            </a>
+                          </div>
+                        </div>
+
                       </div>
                     </div>
 
