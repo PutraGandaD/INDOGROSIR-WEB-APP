@@ -89,7 +89,7 @@
     <div class="container position-relative" data-aos="fade-up" data-aos-delay="500">
       <h1>selamat datang di Indogrosir</h1>
       <h2>We are team of your services</h2>
-      <a href="#" class="btn-get-started scrollto ">Get Started</a>
+      <a href="{{url('dashboard')}}" class="btn-get-started scrollto">Get Started</a>
     </div>
   </section><!-- End Hero -->
 
