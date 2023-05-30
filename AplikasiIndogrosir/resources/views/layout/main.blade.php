@@ -13,7 +13,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>INDOGROSIR APP</title>
+  <title>INDOGROSIR</title>
 
   <!-- theme meta -->
   <meta name="theme-name" content="mono" />
@@ -55,7 +55,8 @@
 
 
   <!-- FAVICON -->
-  <link href="{{ asset('images/favicon.png')}}" rel="shortcut icon" />
+  <link href="{{ asset('http://indogrosir.co.id/images/logo/igr_logo_large.png')}}" rel="icon">
+
 
   <!--
     HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
@@ -93,8 +94,8 @@
             <!-- Aplication Brand -->
             <div class="app-brand">
               <a href="{{ asset('/index.html')}}">
-                <img src="{{ asset('images/logo.png')}}" alt="Mono">
-                <span class="brand-name">INDOGROSIR</span>
+                <span class="brand-name"><img src="{{ asset('http://indogrosir.co.id/images/logo/igr_logo_large.png')}}" alt="Mono">
+                </span>
               </a>
             </div>
             <!-- begin sidebar scrollbar -->
