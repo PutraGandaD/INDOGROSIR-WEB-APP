@@ -12,7 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('divisi', function (Blueprint $table) {
-            $table->id();
+            $table->uuid('id');
+            $table->primary('id');
+            $table->char('nama_divisi');
+            $table->char('bagian_divisi');
             $table->timestamps();
         });
     }
