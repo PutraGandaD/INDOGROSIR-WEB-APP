@@ -175,7 +175,7 @@
                   </li>
 
                   <li>
-                    <a class="sidenav-item-link" href="{{ asset('')}}">
+                    <a class="sidenav-item-link" href="{{url('pegawai')}}">
                       <i class="mdi mdi-account-group"></i>
                       <span class="nav-text">Pegawai</span>
                     </a>
@@ -186,13 +186,13 @@
 
 
                   <li>
-                    <a class="sidenav-item-link" href="{{ asset('')}}">
+                    <a class="sidenav-item-link" href="{{url('divisi')}}">
                       <i class="mdi mdi-account-group"></i>
                       <span class="nav-text">Divisi</span>
                     </a>
                   </li>
                   <li>
-                    <a class="sidenav-item-link" href="{{ asset('')}}">
+                    <a class="sidenav-item-link" href="{{url('shift')}}">
                       <i class="mdi mdi-account-group"></i>
                       <span class="nav-text">Shift</span>
                     </a>
