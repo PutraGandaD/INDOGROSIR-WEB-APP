@@ -205,9 +205,7 @@
 
 
       {{-- ——— PAGE WRAPPER --}}
-      {{-- <div class="content-wrapper">
-            @yield('content')
-        </div> --}}
+
       <div class="page-wrapper">
 
           <!-- Header -->
@@ -1216,6 +1214,9 @@
                   </form>
                 </div>
         </div>
+</div>
+<div class="content-wrapper">
+    @yield('content')
 </div>
 
         </div>

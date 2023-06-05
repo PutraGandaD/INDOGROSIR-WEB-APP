@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Shift;
 use Illuminate\Http\Request;
 
 class ShiftController extends Controller
@@ -12,6 +13,8 @@ class ShiftController extends Controller
     public function index()
     {
         //
+        $shift = Shift::all();
+        return view('shift.index')->with('shift',$shift);
     }
 
     /**

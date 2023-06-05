@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\DivisiController;
+use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ShiftController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,6 +31,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-
+Route::resources('pegawai', PegawaiController::class);
+Route::resources('divisi', DivisiController::class);
+Route::resources('shift', ShiftController::class);
 
 require __DIR__.'/auth.php';
