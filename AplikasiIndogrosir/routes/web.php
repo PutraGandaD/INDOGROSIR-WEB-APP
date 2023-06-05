@@ -7,7 +7,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ShiftController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\ProdukController;
-use App\Models\KontainerBarang;
+use App\Http\Controllers\KontainerBarang;
 use Illuminate\Support\Facades\Route;
 
 /*
