@@ -7,7 +7,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ShiftController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\ProdukController;
-use App\Http\Controllers\KontainerBarang;
+use App\Http\Controllers\KontainerBarangController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -40,7 +40,7 @@ Route::resource('pegawai', PegawaiController::class);
 Route::resource('divisi', DivisiController::class);
 Route::resource('shift', ShiftController::class);
 Route::resource('brand', BrandController::class);
-Route::resource('kontainerbarang', KontainerBarang::class);
+Route::resource('kontainerbarang', KontainerBarangController::class);
 Route::resource('produk', ProdukController::class);
 
 require __DIR__.'/auth.php';
