@@ -36,9 +36,9 @@ Route::middleware('auth')->group(function () {
 });
 
 
-Route::resources('pegawai', PegawaiController::class);
-Route::resources('divisi', DivisiController::class);
-Route::resources('shift', ShiftController::class);
+Route::resource('pegawai', PegawaiController::class);
+Route::resource('divisi', DivisiController::class);
+Route::resource('shift', ShiftController::class);
 Route::resource('brand', BrandController::class);
 Route::resource('kontainerbarang', KontainerBarang::class);
 Route::resource('produk', ProdukController::class);
