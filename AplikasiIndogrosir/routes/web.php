@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\BrandController;
+use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\ProfileController;
+use App\Models\KontainerBarang;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,6 +31,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-
+Route::resource('brand', BrandController::class);
+Route::resource('kontainerbarang', KontainerBarang::class)
+Route::resource('produk', ProdukController::class)
 
 require __DIR__.'/auth.php';

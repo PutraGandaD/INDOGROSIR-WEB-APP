@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\KontainerBarang;
 use Illuminate\Http\Request;
 
 class KontainerBarangController extends Controller
@@ -12,6 +13,8 @@ class KontainerBarangController extends Controller
     public function index()
     {
         //
+        $kontainerBarang = KontainerBarang::all();
+        return view('kontainerBarang.index')->with('kontainerBarang', $kontainerBarang);
     }
 
     /**
