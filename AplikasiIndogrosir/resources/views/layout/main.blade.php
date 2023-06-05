@@ -140,7 +140,7 @@
 
                   <li
                    >
-                    <a class="sidenav-item-link" href="{{ asset('')}}">
+                    <a class="sidenav-item-link" href="{{url('brand')}}">
                       <i class="mdi mdi-wechat"></i>
                       <span class="nav-text">Brand</span>
                     </a>
@@ -152,7 +152,7 @@
 
                   <li
                    >
-                    <a class="sidenav-item-link" href="{{ asset('')}}">
+                    <a class="sidenav-item-link" href="{{url('kontainerbarang')}}">
                       <i class="mdi mdi-phone"></i>
                       <span class="nav-text">Kontainer Barang</span>
                     </a>
@@ -163,7 +163,7 @@
 
 
                   <li>
-                    <a class="sidenav-item-link" href="{{ asset('')}}">
+                    <a class="sidenav-item-link" href="{{url('produk')}}">
                       <i class="mdi mdi-account-group"></i>
                       <span class="nav-text">Produk</span>
                     </a>
