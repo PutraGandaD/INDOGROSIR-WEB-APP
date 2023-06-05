@@ -11,7 +11,7 @@ class BrandController extends Controller
      */
     public function index()
     {
-        //
+        return view('brand.index')->with('brand', $brand);
     }
 
     /**
