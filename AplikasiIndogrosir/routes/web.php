@@ -32,7 +32,7 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::resource('brand', BrandController::class);
-Route::resource('kontainerbarang', KontainerBarang::class)
-Route::resource('produk', ProdukController::class)
+Route::resource('kontainerbarang', KontainerBarang::class);
+Route::resource('produk', ProdukController::class);
 
 require __DIR__.'/auth.php';
