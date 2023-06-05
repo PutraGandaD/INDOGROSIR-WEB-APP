@@ -1,9 +1,13 @@
 <?php
 
+
 use App\Http\Controllers\DivisiController;
 use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ShiftController;
+use App\Http\Controllers\BrandController;
+use App\Http\Controllers\ProdukController;
+use App\Models\KontainerBarang;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,8 +35,12 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+
 Route::resources('pegawai', PegawaiController::class);
 Route::resources('divisi', DivisiController::class);
 Route::resources('shift', ShiftController::class);
+Route::resource('brand', BrandController::class);
+Route::resource('kontainerbarang', KontainerBarang::class);
+Route::resource('produk', ProdukController::class);
 
 require __DIR__.'/auth.php';
