@@ -54,7 +54,7 @@
                   <div class="card-header pb-0">
                     <div class="app-brand w-100 d-flex justify-content-center border-bottom-0">
                       <a class="w-auto pl-0" href="/index.html">
-                        <img  alt="Indogrosir">
+                        <img src="http://indogrosir.co.id/images/logo/igr_logo_large.png" alt="Indogrosir">
                       </a>
                     </div>
                   </div>
