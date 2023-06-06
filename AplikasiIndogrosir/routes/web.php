@@ -35,6 +35,11 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::get('/logout', function(){
+    Auth::logout();
+    return Redirect::to('login');
+ });
+
 Route::resource('pegawai', PegawaiController::class);
 Route::resource('divisi', DivisiController::class);
 Route::resource('shift', ShiftController::class);
