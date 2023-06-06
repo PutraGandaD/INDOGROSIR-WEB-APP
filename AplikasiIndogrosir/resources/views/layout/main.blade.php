@@ -126,7 +126,7 @@
                   <li  class="@yield('hoverbrand')"
                    >
                     <a class="sidenav-item-link" href="{{url('brand')}}">
-                      <i class="mdi mdi-wechat"></i>
+                      <i class="mdi mdi-office-building"></i>
                       <span class="nav-text">Brand</span>
                     </a>
                   </li>
@@ -138,7 +138,7 @@
                   <li  class="@yield('hoverkontainer')"
                    >
                     <a class="sidenav-item-link" href="{{url('kontainerbarang')}}">
-                      <i class="mdi mdi-phone"></i>
+                      <i class="mdi mdi-package-down"></i>
                       <span class="nav-text">Kontainer Barang</span>
                     </a>
                   </li>
@@ -149,7 +149,7 @@
 
                   <li  class="@yield('hoverproduk')">
                     <a class="sidenav-item-link" href="{{url('produk')}}">
-                      <i class="mdi mdi-account-group"></i>
+                      <i class="mdi mdi-cart-plus"></i>
                       <span class="nav-text">Produk</span>
                     </a>
                   </li>
@@ -161,7 +161,7 @@
 
                   <li  class="@yield('hoverpegawai')">
                     <a class="sidenav-item-link" href="{{url('pegawai')}}">
-                      <i class="mdi mdi-account-group"></i>
+                      <i class="mdi mdi-account"></i>
                       <span class="nav-text">Pegawai</span>
                     </a>
                   </li>
@@ -179,7 +179,7 @@
 
                   <li  class=@yield('hovershift')>
                     <a class="sidenav-item-link" href="{{url('shift')}}">
-                      <i class="mdi mdi-account-group"></i>
+                      <i class="mdi mdi-account-clock"></i>
                       <span class="nav-text">Shift</span>
                     </a>
                   </li>
