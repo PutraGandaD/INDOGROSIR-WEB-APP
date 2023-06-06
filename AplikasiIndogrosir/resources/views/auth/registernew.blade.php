@@ -54,26 +54,48 @@
                   <div class="card-header pb-0">
                     <div class="app-brand w-100 d-flex justify-content-center border-bottom-0">
                       <a class="w-auto pl-0" href="/index.html">
-                        <img src="images/logo.png" alt="Mono">
-                        <span class="brand-name text-dark">MONO</span>
+                        <img  alt="Indogrosir">
                       </a>
                     </div>
                   </div>
                   <div class="card-body px-5 pb-5 pt-0">
-                    <h4 class="text-dark text-center mb-5">Sign Up</h4>
-                    <form action="/index.html">
+                    <h4 class="text-dark text-center mb-5">Register</h4>
+
+                    <form method="POST" action="{{route('register')}}">
+                        @csrf
                       <div class="row">
+                        {{-- nama --}}
                         <div class="form-group col-md-12 mb-4">
-                          <input type="text" class="form-control input-lg" id="name" aria-describedby="nameHelp" placeholder="Name">
+                            <x-input-label for="name" :value="__('Name')"/>
+                             <x-text-input id="name"   class="block mt-1 w-full form-control input-lg" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
+                            <x-input-error :messages="$errors->get('name')" class="mt-2" />
                         </div>
+                        {{-- email --}}
                         <div class="form-group col-md-12 mb-4">
-                          <input type="email" class="form-control input-lg" id="email" aria-describedby="emailHelp" placeholder="Username">
+                            <x-input-label for="email" :value="__('Email')" />
+                            <x-text-input id="email" class="block mt-1 w-full form-control input-lg" type="email" name="email" :value="old('email')" required autocomplete="username" />
+                            <x-input-error :messages="$errors->get('email')" class="mt-2" />
                         </div>
+                        {{-- password --}}
                         <div class="form-group col-md-12 ">
-                          <input type="password" class="form-control input-lg" id="password" placeholder="Password">
+                          <x-input-label for="password" :value="__('Password')" />
+
+                            <x-text-input id="password" class="block mt-1 w-full form-control input-lg"
+                            type="password"
+                            name="password"
+                            required autocomplete="new-password" />
+
+                            <x-input-error :messages="$errors->get('password')" class="mt-2" />
                         </div>
+                        {{-- confirm password --}}
                         <div class="form-group col-md-12 ">
-                          <input type="password" class="form-control input-lg" id="cpassword" placeholder="Confirm Password">
+                          <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
+
+                          <x-text-input id="password_confirmation" class="block mt-1 w-full form-control input-lg"
+                                          type="password"
+                                          name="password_confirmation" required autocomplete="new-password" />
+
+                          <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
                         </div>
                         <div class="col-md-12">
                           <div class="d-flex justify-content-between mb-3">
@@ -88,7 +110,7 @@
                           <button type="submit" class="btn btn-primary btn-pill mb-4">Sign Up</button>
 
                           <p>Already have an account?
-                            <a class="text-blue" href="sign-in.html">Sign in</a>
+                            <a class="text-blue" href="{{ route('login') }}">Login</a>
                           </p>
                         </div>
                       </div>

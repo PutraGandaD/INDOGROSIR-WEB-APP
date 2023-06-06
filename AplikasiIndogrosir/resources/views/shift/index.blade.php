@@ -1,5 +1,11 @@
 @extends('layout.main')
+@section('hovershift','active')
+@section('pagetitle', 'Shift Kerja')
+
 @section('content')
 
-<h1>oppppp</h1>
+<div class="container-fluid">
+    <h1>halaman Shift Kerja</h1>
+</div>
+
 @endsection

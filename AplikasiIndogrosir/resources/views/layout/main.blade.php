@@ -93,7 +93,7 @@
           <div id="sidebar" class="sidebar sidebar-with-footer">
             <!-- Aplication Brand -->
             <div class="app-brand">
-              <a href="{{ asset('/index.html')}}">
+              <a href="{{ asset('dashboard')}}">
                 <span class="brand-name"><img src="{{ asset('http://indogrosir.co.id/images/logo/igr_logo_large.png')}}" alt="Mono">
                 </span>
               </a>
@@ -106,28 +106,13 @@
 
 
                   <li
-                   class="active"
+                   class="@yield('hoverdashboard')"
                    >
-                    <a class="sidenav-item-link" href="{{ asset('')}}">
+                    <a class="sidenav-item-link" href="{{ asset('dashboard')}}">
                       <i class="mdi mdi-briefcase-account-outline"></i>
                       <span class="nav-text">Dasbor Produk</span>
                     </a>
                   </li>
-
-
-
-
-
-                  <li
-                   >
-                    <a class="sidenav-item-link" href="{{ asset('')}}">
-                      <i class="mdi mdi-chart-line"></i>
-                      <span class="nav-text">Indogrosir Dashboard</span>
-                    </a>
-                  </li>
-
-
-
 
 
                   <li class="section-title">
@@ -138,7 +123,7 @@
 
 
 
-                  <li
+                  <li  class="@yield('hoverbrand')"
                    >
                     <a class="sidenav-item-link" href="{{url('brand')}}">
                       <i class="mdi mdi-wechat"></i>
@@ -150,7 +135,7 @@
 
 
 
-                  <li
+                  <li  class="@yield('hoverkontainer')"
                    >
                     <a class="sidenav-item-link" href="{{url('kontainerbarang')}}">
                       <i class="mdi mdi-phone"></i>
@@ -162,7 +147,7 @@
 
 
 
-                  <li>
+                  <li  class="@yield('hoverproduk')">
                     <a class="sidenav-item-link" href="{{url('produk')}}">
                       <i class="mdi mdi-account-group"></i>
                       <span class="nav-text">Produk</span>
@@ -174,7 +159,7 @@
                     PEGAWAI
                   </li>
 
-                  <li>
+                  <li  class="@yield('hoverpegawai')">
                     <a class="sidenav-item-link" href="{{url('pegawai')}}">
                       <i class="mdi mdi-account-group"></i>
                       <span class="nav-text">Pegawai</span>
@@ -185,13 +170,14 @@
 
 
 
-                  <li>
+                  <li  class="@yield('hoverdivisi')">
                     <a class="sidenav-item-link" href="{{url('divisi')}}">
                       <i class="mdi mdi-account-group"></i>
                       <span class="nav-text">Divisi</span>
                     </a>
                   </li>
-                  <li>
+
+                  <li  class=@yield('hovershift')>
                     <a class="sidenav-item-link" href="{{url('shift')}}">
                       <i class="mdi mdi-account-group"></i>
                       <span class="nav-text">Shift</span>
@@ -216,7 +202,7 @@
                 <span class="sr-only">Toggle navigation</span>
               </button>
 
-              <span class="page-title">dashboard</span>
+              <span class="page-title">@yield('pagetitle')</span>
 
               <div class="navbar-right ">
 
@@ -287,7 +273,7 @@
                               </div>
                               <div class="media-body">
                                 <a href="{{ asset('user-profile.html')}}">
-                                  <span class="title mb-0">John Doe</span>
+                                  <span class="title mb-0">Zarazzar</span>
                                   <span class="discribe">Extremity sweetness difficult behaviour he of. On disposal of as landlord horrible. Afraid at highly months do things on at.</span>
                                   <span class="time">
                                     <time>Just now</time>...
@@ -414,7 +400,7 @@
                               </div>
                               <div class="media-body">
                                 <a href="{{ asset('user-profile.html')}}">
-                                  <span class="title mb-0">John Doe</span>
+                                  <span class="title mb-0">Zarazzaar</span>
                                   <span class="discribe">Extremity sweetness difficult behaviour he of. On disposal of as landlord horrible. Afraid
                                     at highly months do things on at.</span>
                                   <span class="time">
@@ -515,7 +501,7 @@
                   <li class="dropdown user-menu">
                     <button class="dropdown-toggle nav-link" data-toggle="dropdown">
                       <img src="images/user/user-xs-01.jpg" class="user-image rounded-circle" alt="User Image" />
-                      <span class="d-none d-lg-inline-block">John Doe</span>
+                      <span class="d-none d-lg-inline-block">Zarazzar</span>
                     </button>
                     <ul class="dropdown-menu dropdown-menu-right">
                       <li>
@@ -555,11 +541,14 @@
 
 
           </header>
+          <div class="content-wrapper">
+            @yield('content')
+            </div>
 
         <!-- ====================================
         ——— CONTENT WRAPPER
         ===================================== -->
-        <div class="content-wrapper">
+        {{-- <div class="content-wrapper">
           <div class="content">
 
 
@@ -1213,19 +1202,21 @@
                     </div>
                   </form>
                 </div>
-        </div>
-</div>
-<div class="content-wrapper">
-    @yield('content')
+        </div> --}}
+
 </div>
 
+
+
         </div>
+
 
           <!-- Footer -->
-          <footer class="footer mt-auto">
+          {{-- <footer class="footer mt-auto">
+
             <div class="copyright bg-white">
               <p>
-                &copy; <span id="copy-year"></span> Copyright Mono Dashboard Bootstrap Template by <a class="text-primary" href={{ asset ('http://www.iamabdus.com/') }}" target="_blank" >Abdus</a>.
+                &copy; <span id="copy-year"></span> Copyright Mono Dashboard Bootstrap Template by <a class="text-primary" href="{{ asset ('http://www.iamabdus.com/') }}" target="_blank" >Abdus</a>.
               </p>
             </div>
             <script>
@@ -1233,7 +1224,7 @@
                 var year = d.getFullYear();
                 document.getElementById("copy-year").innerHTML = year;
             </script>
-          </footer>
+          </footer> --}}
 
       </div>
     </div>
@@ -1392,7 +1383,7 @@
 
 
 
-                    <script src="{{ asset ('plugins/toaster/toastr.min.js') }}"></script>
+                    {{-- <script src="{{ asset ('plugins/toaster/toastr.min.js') }}"></script> --}}
 
 
 
