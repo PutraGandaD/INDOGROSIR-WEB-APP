@@ -8,6 +8,8 @@ use App\Http\Controllers\ShiftController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\KontainerBarangController;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Route;
 
 /*
