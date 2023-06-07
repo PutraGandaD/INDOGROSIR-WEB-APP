@@ -15,6 +15,7 @@ return new class extends Migration
             $table->uuid('id');
             $table->primary('id');
             $table->integer('harga_produk');
+            $table->String('nama_produk', 50);
             $table->String('foto_produk');
             // foreign key brand
             $table->uuid('brand_id');
