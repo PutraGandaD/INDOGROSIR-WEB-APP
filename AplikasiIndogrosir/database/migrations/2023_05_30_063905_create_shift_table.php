@@ -15,6 +15,7 @@ return new class extends Migration
             $table->uuid('id');
             $table->primary('id');
             $table->char('waktu_shift',10);
+            $table->char('jam_kerja',20);
             $table->timestamps();
         });
     }

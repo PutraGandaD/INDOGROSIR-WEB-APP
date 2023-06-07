@@ -14,7 +14,9 @@ return new class extends Migration
         Schema::create('pegawai', function (Blueprint $table) {
                 $table->uuid('id');
                 $table->primary('id');
+                $table->char('kode_pegawai',6);
                 $table->string('nama_pegawai',50);
+                $table->string('foto_pegawai');
                 $table->string('alamat',50);
                 $table->string('nomor_hp',20);
                 //foreign divisi

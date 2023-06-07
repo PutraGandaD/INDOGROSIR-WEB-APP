@@ -22,7 +22,7 @@ class ShiftController extends Controller
      */
     public function create()
     {
-        //
+        return view ('shift.create');
     }
 
     /**
@@ -30,7 +30,21 @@ class ShiftController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validate = $request->validate([
+            'waktu_shift' => 'required',
+            'jam_kerja' => 'required'
+
+        ]);
+
+        //create object from models Shift
+        $shift = new Shift();
+        $shift -> waktu_shift = $validate['waktu_shift'];
+        $shift -> jam_kerja = $validate['jam_kerja'];
+
+        $shift -> save();
+
+        return redirect()-> route('shift.index') -> with('success', 'Data Shift : '.$validate['waktu_shift'].' has been saved!');
+
     }
 
     /**

@@ -22,7 +22,7 @@ class DivisiController extends Controller
      */
     public function create()
     {
-        //
+        return view ('divisi.create');
     }
 
     /**
@@ -30,7 +30,19 @@ class DivisiController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validate = $request->validate([
+            'nama_divisi' => 'required',
+            'bagian_divisi' => 'required'
+        ]);
+
+        //create object from models divisi
+        $divisi = new Divisi();
+        $divisi -> nama_divisi = $validate['nama_divisi'];
+        $divisi -> bagian_divisi = $validate['bagian_divisi'];
+        $divisi -> save();
+
+        return redirect()-> route('divisi.index') -> with('success', 'Data Divisi '.$validate['nama_divisi'].'has been saved!');
+
     }
 
     /**

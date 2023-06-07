@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Divisi;
 use App\Models\Pegawai;
+use App\Models\Shift;
 use Illuminate\Http\Request;
 
 class PegawaiController extends Controller
@@ -22,7 +24,10 @@ class PegawaiController extends Controller
 
     public function create()
     {
-        //
+        $divisi = Divisi::orderBy('nama_divisi','ASC')->get();
+        $shift = Shift::orderBy('waktu_shift','ASC')->get();
+
+        return view('pegawai.create') ->with('divisi',$divisi) ->with('shift',$shift);
 
     }
 
@@ -31,7 +36,15 @@ class PegawaiController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validate = $request->validate([
+            'kode_pegawai'=>'required',
+            'nama_pegawai'=>'required',
+            'foto_pegawai'=>'required',
+            'alamat'=>'required',
+            'nomor_hp'
+
+
+        ]);
     }
 
     /**
