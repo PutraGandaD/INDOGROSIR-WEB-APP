@@ -22,7 +22,7 @@ class KontainerBarangController extends Controller
      */
     public function create()
     {
-        //
+        return view('kontainerBarang.create');
     }
 
     /**
@@ -30,7 +30,17 @@ class KontainerBarangController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // validasi data
+        $validasi = $request->validate([
+            'nama_kontainer' => 'required',
+        ]);
+
+        // buat objek dari model Kontainer Barang
+        $kontainerBarang = new KontainerBarang();
+        $kontainerBarang -> nama_kontainer = $validasi['nama_kontainer'];
+        $kontainerBarang -> save();
+
+        return redirect()->route('kontainerBarang.index')->with('success', "Data kontainer barang ".$validasi['nama_kontainer']." berhasil disimpan");
     }
 
     /**
