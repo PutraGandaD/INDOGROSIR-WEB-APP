@@ -7,10 +7,10 @@
 <div class="col-md-12 grid-margin strech-card mt-5">
     <div class="card">
         <div class="card-body">
-            <h2 class="card-title">Tambah Wshift</h2>
-            <p>tambahkan Pegawai</p>
+            <h2 class="card-title">Tambah Pegawai</h2>
+            <p class="mb-5">tambahkan Pegawai</p>
 
-            <form class="forms-sample" method="post" action="{{route('pegawai.store')}}">
+            <form class="forms-sample" method="post" enctype="multipart/form-data" action="{{route('pegawai.store')}}">
                 @csrf
               <div class="form-group">
                 <label for="kode_pegawai">Kode Pegawai</label>
@@ -68,7 +68,13 @@
                 </select>
               </div>
 
-
+              <div class="form-group">
+                <label for="foto_pegawai">Upload Foto</label>
+                <input type="file" class="form-control" name="foto_pegawai" placeholder="foto_pegawai" accept="image/*" capture="camera">
+                @error('foto_pegawai')
+                   <span class="text-danger">{{$message}}</span>
+                @enderror
+              </div>
 
 
               <button type="submit"  class="btn btn-success me-2">Tambah</button>
