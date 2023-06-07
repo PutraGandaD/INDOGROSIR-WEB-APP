@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('divisi', function (Blueprint $table) {
             $table->uuid('id');
             $table->primary('id');
-            $table->char('nama_divisi');
-            $table->char('bagian_divisi');
+            $table->string('nama_divisi',30);
+            $table->string('bagian_divisi',30);
             $table->timestamps();
         });
     }

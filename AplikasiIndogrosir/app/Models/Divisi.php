@@ -11,4 +11,8 @@ class Divisi extends Model
     use HasFactory,HasUuids;
     protected $table ='divisi';
 
+    public function pegawai(){
+        return $this->hasMany(Pegawai::class);
+    }
+
 }

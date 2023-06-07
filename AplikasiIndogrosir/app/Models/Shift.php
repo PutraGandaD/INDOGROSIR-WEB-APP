@@ -10,5 +10,9 @@ class Shift extends Model
 {
     use HasFactory,HasUuids;
     protected $table ='shift';
+
+    public function pegawai(){
+        return $this->hasMany(Pegawai::class);
+    }
 }
 
