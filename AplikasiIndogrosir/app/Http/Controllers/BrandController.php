@@ -30,7 +30,7 @@ class BrandController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request);
+        //dd($request);
 
         // validasi data
         $validasi = $request->validate([

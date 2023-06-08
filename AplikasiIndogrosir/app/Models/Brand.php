@@ -11,4 +11,7 @@ class Brand extends Model
     use HasFactory, HasUuids;
     protected $table = 'brand';
 
+    public function produk() {
+        return $this->hasMany(Produk::class);
+    }
 }

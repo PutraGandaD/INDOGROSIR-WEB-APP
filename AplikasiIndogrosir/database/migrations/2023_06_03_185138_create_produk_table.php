@@ -23,6 +23,8 @@ return new class extends Migration
             // foreign key kontainer
             $table->uuid('kontainer_id');
             $table->foreign('kontainer_id')->references('id')->on('kontainerBarang')->cascadeOnDelete()->cascadeOnUpdate();
+            $table->timestamps();
+
         });
     }
 

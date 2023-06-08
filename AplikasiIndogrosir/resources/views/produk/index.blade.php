@@ -1,6 +1,6 @@
 @extends('layout.main')
 @section('pagetitle', 'Produk')
-@section('hoverbrand','active')
+@section('hoverproduk','active')
 
 @section('content')
 
@@ -19,15 +19,20 @@
             <table class="table table-striped">
                 <thead>
                     <th>Nama Produk</th>
-                    <th>Brand Produk</th>
                     <th>Foto Produk</th>
+                    <th>Brand Produk</th>
                     <th>Kontainer</th>
                     <th>Harga</th>
                 </thead>
-                @foreach ($kontainerBarang as $item )
+                @foreach ($produk as $item )
                 <tbody>
                     <td>{{$item -> nama_produk}}</td>
-                    <td>{{$item -> created_at}}</td>
+                    <td> <img width="500"
+                        src="{{ $item->foto_produk ? asset('storage/' . $item->foto_produk) : asset('images/faces/face5.jpg') }}">
+                    </td>
+                    <td>{{$item -> brand -> nama_brand}}</td>
+                    <td>{{$item -> kontainerbarang -> nama_kontainer}}</td>
+                    <td>{{$item -> harga_produk}}</td>
                 </tbody>
                 @endforeach
             </table>
