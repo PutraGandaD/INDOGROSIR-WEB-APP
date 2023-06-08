@@ -40,7 +40,7 @@ class KontainerBarangController extends Controller
         $kontainerBarang -> nama_kontainer = $validasi['nama_kontainer'];
         $kontainerBarang -> save();
 
-        return redirect()->route('kontainerBarang.index')->with('success', "Data kontainer barang ".$validasi['nama_kontainer']." berhasil disimpan");
+        return redirect()->route('kontainerbarang.index')->with('success', "Data kontainer barang ".$validasi['nama_kontainer']." berhasil disimpan");
     }
 
     /**

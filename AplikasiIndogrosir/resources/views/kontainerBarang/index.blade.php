@@ -1,6 +1,6 @@
 @extends('layout.main')
 @section('pagetitle', 'Kontainer Barang')
-@section('hoverbrand','active')
+@section('hoverkontainer','active')
 
 @section('content')
 
