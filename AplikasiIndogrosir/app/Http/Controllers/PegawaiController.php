@@ -37,14 +37,31 @@ class PegawaiController extends Controller
     public function store(Request $request)
     {
         $validate = $request->validate([
+            'foto_pegawai'=>'required|file|image|max:5000',
             'kode_pegawai'=>'required',
             'nama_pegawai'=>'required',
-            'foto_pegawai'=>'required',
+            'divisi_id'=>'required',
+            'shift_id'=>'required',
             'alamat'=>'required',
-            'nomor_hp'
-
-
+            'nomor_hp'=>'required'
         ]);
+
+        $ext = $request->foto_pegawai->getClientOriginalExtension();
+        $new_filename = $validate['kode_pegawai'].".".$ext;
+        $request->foto_pegawai->storeAs('public',$new_filename);
+
+        $pegawai = new Pegawai();
+        $pegawai ->foto_pegawai =$new_filename;
+        $pegawai ->kode_pegawai = $validate['kode_pegawai'];
+        $pegawai ->nama_pegawai = $validate['nama_pegawai'];
+        $pegawai -> divisi_id = $validate['divisi_id'];
+        $pegawai -> shift_id =$validate['shift_id'];
+        $pegawai -> alamat = $validate['alamat'];
+        $pegawai -> nomor_hp= $validate['nomor_hp'];
+
+        $pegawai -> save();
+        return redirect()->route('pegawai.index')->with('success','Data Pegawai '.$validate['nama_pegawai'].' Berhasil di Simpan!');
+
     }
 
     /**
