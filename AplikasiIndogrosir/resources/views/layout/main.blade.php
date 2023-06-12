@@ -12,6 +12,7 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="csrf-token" content="{{csrf_token()}}">
 
   <title>INDOGROSIR</title>
 
@@ -541,9 +542,7 @@
 
 
           </header>
-          <div class="content-wrapper">
-            @yield('content')
-            </div>
+
 
         <!-- ====================================
         ——— CONTENT WRAPPER
@@ -1203,20 +1202,21 @@
                   </form>
                 </div>
         </div> --}}
+        <div class="content-wrapper">
+            @yield('content')
+        </div>
+
+    </div>
 
 </div>
 
-
-
-        </div>
-
-
+        <div>
           <!-- Footer -->
-          {{-- <footer class="footer mt-auto">
+          <footer class="footer mt-auto">
 
             <div class="copyright bg-white">
               <p>
-                &copy; <span id="copy-year"></span> Copyright Mono Dashboard Bootstrap Template by <a class="text-primary" href="{{ asset ('http://www.iamabdus.com/') }}" target="_blank" >Abdus</a>.
+                &copy; <span id="copy-year"></span> Copyright WEB 2 UAS <a class="text-primary" href="{{ asset ('http://www.iamabdus.com/') }}" target="_blank" >Azzar</a>.
               </p>
             </div>
             <script>
@@ -1224,10 +1224,10 @@
                 var year = d.getFullYear();
                 document.getElementById("copy-year").innerHTML = year;
             </script>
-          </footer> --}}
+          </footer>
 
       </div>
-    </div>
+
 
                     <!-- Card Offcanvas -->
                     <div class="card card-offcanvas" id="contact-off" >
@@ -1399,100 +1399,8 @@
                     </script>
 
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script src="https://www.jqueryscript.net/demo/check-all-rows/dist/TableCheckAll.js"></script>
-
-<script type="text/javascript">
-    $(document).ready(function() {
-
-     $("#posts-table").TableCheckAll();
-
-    $('#multi-delete').on('click', function() {
-        var button = $(this);
-        var selected = [];
-        $('#posts-table .check:checked').each(function() {
-        selected.push($(this).val());
-        });
-
-        Swal.fire({
-        icon: 'warning',
-            title: 'Are you sure you want to delete selected record(s)?',
-            showDenyButton: false,
-            showCancelButton: true,
-            confirmButtonText: 'Yes'
-        }).then((result) => {
-        /* Read more about isConfirmed, isDenied below */
-        if (result.isConfirmed) {
-            $.ajax({
-            type: 'post',
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            },
-            url: button.data('route'),
-            data: {
-                'selected': selected
-            },
-            success: function (response, textStatus, xhr) {
-                Swal.fire({
-                icon: 'success',
-                    title: response,
-                    showDenyButton: false,
-                    showCancelButton: false,
-                    confirmButtonText: 'Yes'
-                }).then((result) => {
-                window.location='/'
-                });
-            }
-            });
-        }
-        });
-    });
-
-    $('.delete-form').on('submit', function(e) {
-        e.preventDefault();
-        var button = $(this);
-
-        Swal.fire({
-        icon: 'warning',
-            title: 'Are you sure you want to delete this record?',
-            showDenyButton: false,
-            showCancelButton: true,
-            confirmButtonText: 'Yes'
-        }).then((result) => {
-        /* Read more about isConfirmed, isDenied below */
-        if (result.isConfirmed) {
-            $.ajax({
-            type: 'post',
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            },
-            url: button.data('route'),
-            data: {
-                '_method': 'delete'
-            },
-            success: function (response, textStatus, xhr) {
-                Swal.fire({
-                icon: 'success',
-                    title: response,
-                    showDenyButton: false,
-                    showCancelButton: false,
-                    confirmButtonText: 'Yes'
-                }).then((result) => {
-                window.location='/'
-                });
-            }
-            });
-        }
-        });
-
-    })
-    });
-</script>
 
 
-                    <!--  -->
 
 
   </body>

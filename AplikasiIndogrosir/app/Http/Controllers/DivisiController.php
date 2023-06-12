@@ -12,6 +12,12 @@ class DivisiController extends Controller
      */
     public function index()
     {
+        // $keyword = $request->query('search');
+        // if($keyword){
+        //     $divisi = Divisi::where('nama', 'LIKE', '%'.$keyword.'%')-> paginate(10);
+        // }else{
+        //     $divisi = Divisi::paginate(10);
+        // }
         //
         $divisi = Divisi::all();
         return view('divisi.index')->with('divisi',$divisi);
