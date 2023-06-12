@@ -273,7 +273,7 @@
                               </div>
                               <div class="media-body">
                                 <a href="{{ asset('user-profile.html')}}">
-                                  <span class="title mb-0">Zarazzar</span>
+                                  <span class="title mb-0">{{auth()->user()->name}}</span>
                                   <span class="discribe">Extremity sweetness difficult behaviour he of. On disposal of as landlord horrible. Afraid at highly months do things on at.</span>
                                   <span class="time">
                                     <time>Just now</time>...
@@ -501,7 +501,7 @@
                   <li class="dropdown user-menu">
                     <button class="dropdown-toggle nav-link" data-toggle="dropdown">
                       <img src="images/user/user-xs-01.jpg" class="user-image rounded-circle" alt="User Image" />
-                      <span class="d-none d-lg-inline-block">Zarazzar</span>
+                      <span class="d-none d-lg-inline-block">{{auth()->user()->name}}</span>
                     </button>
                     <ul class="dropdown-menu dropdown-menu-right">
                       <li>
@@ -1392,7 +1392,104 @@
                     <script src="{{ asset ('js/map.js') }}"></script>
                     <script src="{{ asset ('js/custom.js') }}"></script>
 
+                    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+                    <script>
+                        $(document).ready(function() {
+                        $('.js-example-basic-single').select2();});
+                    </script>
 
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://www.jqueryscript.net/demo/check-all-rows/dist/TableCheckAll.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+
+     $("#posts-table").TableCheckAll();
+
+    $('#multi-delete').on('click', function() {
+        var button = $(this);
+        var selected = [];
+        $('#posts-table .check:checked').each(function() {
+        selected.push($(this).val());
+        });
+
+        Swal.fire({
+        icon: 'warning',
+            title: 'Are you sure you want to delete selected record(s)?',
+            showDenyButton: false,
+            showCancelButton: true,
+            confirmButtonText: 'Yes'
+        }).then((result) => {
+        /* Read more about isConfirmed, isDenied below */
+        if (result.isConfirmed) {
+            $.ajax({
+            type: 'post',
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            url: button.data('route'),
+            data: {
+                'selected': selected
+            },
+            success: function (response, textStatus, xhr) {
+                Swal.fire({
+                icon: 'success',
+                    title: response,
+                    showDenyButton: false,
+                    showCancelButton: false,
+                    confirmButtonText: 'Yes'
+                }).then((result) => {
+                window.location='/'
+                });
+            }
+            });
+        }
+        });
+    });
+
+    $('.delete-form').on('submit', function(e) {
+        e.preventDefault();
+        var button = $(this);
+
+        Swal.fire({
+        icon: 'warning',
+            title: 'Are you sure you want to delete this record?',
+            showDenyButton: false,
+            showCancelButton: true,
+            confirmButtonText: 'Yes'
+        }).then((result) => {
+        /* Read more about isConfirmed, isDenied below */
+        if (result.isConfirmed) {
+            $.ajax({
+            type: 'post',
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            url: button.data('route'),
+            data: {
+                '_method': 'delete'
+            },
+            success: function (response, textStatus, xhr) {
+                Swal.fire({
+                icon: 'success',
+                    title: response,
+                    showDenyButton: false,
+                    showCancelButton: false,
+                    confirmButtonText: 'Yes'
+                }).then((result) => {
+                window.location='/'
+                });
+            }
+            });
+        }
+        });
+
+    })
+    });
+</script>
 
 
                     <!--  -->

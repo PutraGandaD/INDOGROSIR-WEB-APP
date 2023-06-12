@@ -72,8 +72,11 @@ class DivisiController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Divisi $divisi)
+
     {
-        //
+        $divisi -> delete();
+        return response("divisi(s) berhasil di delete",200);
+        // return redirect()->route('divisi.index')-> with('success','data berhasil dihapus');
     }
 }

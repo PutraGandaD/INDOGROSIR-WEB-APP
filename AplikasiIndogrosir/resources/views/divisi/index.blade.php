@@ -22,6 +22,7 @@
                                     <tr>
                                         <th>Nama Divisi</th>
                                         <th>Bagian Divisi</th>
+                                        <th></th>
                                     </tr>
 
                                 </thead>
@@ -30,6 +31,16 @@
                                     <tr>
                                         <td>{{$item -> nama_divisi}}</td>
                                         <td>{{$item -> bagian_divisi}}</td>
+                                        <td>
+                                            <div class="d-flex justify-content">
+
+                                                <form class="delete-form" data-route="{{'divisi.destroy', $item->id}}" method="POST" >
+                                                    @method('delete')
+                                                    @csrf
+                                                    <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                                </form>
+                                            </div>
+                                        </td>
                                     </tr>
                                     @endforeach
                                 </tbody>
