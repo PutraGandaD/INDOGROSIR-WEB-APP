@@ -26,6 +26,7 @@
                                         <th>Shift</th>
                                         <th>Alamat</th>
                                         <th>Nomor Telp</th>
+                                        <th></th>
                                     </tr>
 
                                 </thead>
@@ -39,6 +40,16 @@
                                         <td>{{$item -> shift -> waktu_shift}}</td>
                                         <td>{{$item -> alamat}}</td>
                                         <td>{{$item -> nomor_hp}}</td>
+                                        <td>
+                                             <div class="d-flex justify-content">
+
+                                                    <form class="delete-form" data-route="{{route('pegawai.destroy',$item->id)}}" method="POST" >
+                                                        @method('delete')
+                                                        @csrf
+                                                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                                    </form>
+                                                </div>
+                                        </td>
 
                                     </tr>
                                     @endforeach

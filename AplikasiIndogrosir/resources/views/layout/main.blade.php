@@ -1216,7 +1216,7 @@
 
             <div class="copyright bg-white">
               <p>
-                &copy; <span id="copy-year"></span> Copyright WEB 2 UAS <a class="text-primary" href="{{ asset ('http://www.iamabdus.com/') }}" target="_blank" >Azzar</a>.
+                &copy; <span id="copy-year"></span> Copyright WEB 2 UAS <a class="text-primary" href="{{ asset ('http://www.iamabdus.com/') }}" target="_blank" >Putra Ganda D || Azzar Rizky</a>.
               </p>
             </div>
             <script>
@@ -1397,6 +1397,98 @@
                         $(document).ready(function() {
                         $('.js-example-basic-single').select2();});
                     </script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://www.jqueryscript.net/demo/check-all-rows/dist/TableCheckAll.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+
+     $("#posts-table").TableCheckAll();
+
+    $('#multi-delete').on('click', function() {
+        var button = $(this);
+        var selected = [];
+        $('#posts-table .check:checked').each(function() {
+        selected.push($(this).val());
+        });
+
+        Swal.fire({
+        icon: 'warning',
+            title: 'Apakah kmu yaqueen mau hapus yang ini ?',
+            showDenyButton: false,
+            showCancelButton: true,
+            confirmButtonText: 'Yes'
+        }).then((result) => {
+        /* Read more about isConfirmed, isDenied below */
+        if (result.isConfirmed) {
+            $.ajax({
+            type: 'post',
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            url: button.data('route'),
+            data: {
+                'selected': selected
+            },
+            success: function (response, textStatus, xhr) {
+                Swal.fire({
+                icon: 'success',
+                    title: response,
+                    showDenyButton: false,
+                    showCancelButton: false,
+                    confirmButtonText: 'Yes'
+                }).then((result) => {
+                window.location='/divisi.index'
+                });
+            }
+            });
+        }
+        });
+    });
+
+    $('.delete-form').on('submit', function(e) {
+        e.preventDefault();
+        var button = $(this);
+
+        Swal.fire({
+        icon: 'warning',
+            title: 'Apakah kmu yaqueen mau hapus yang ini ?',
+            showDenyButton: false,
+            showCancelButton: true,
+            confirmButtonText: 'Yes'
+        }).then((result) => {
+        /* Read more about isConfirmed, isDenied below */
+        if (result.isConfirmed) {
+            $.ajax({
+            type: 'post',
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            url: button.data('route'),
+            data: {
+                '_method': 'delete'
+            },
+            success: function (response, textStatus, xhr) {
+                Swal.fire({
+                icon: 'success',
+                    title: response,
+                    showDenyButton: false,
+                    showCancelButton: false,
+                    confirmButtonText: 'Yes'
+                }).then((result) => {
+                window.location=window.location.href
+                });
+            }
+            });
+        }
+        });
+
+    })
+    });
+</script>
 
 
 
