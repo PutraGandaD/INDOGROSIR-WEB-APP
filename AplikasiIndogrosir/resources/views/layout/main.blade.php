@@ -28,6 +28,7 @@
   <link href="{{ asset('plugins/nprogress/nprogress.css')}}" rel="stylesheet" />
 
 
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 
 
   <link href="{{ asset('plugins/DataTables/DataTables-1.10.18/css/jquery.dataTables.min.css')}}" rel="stylesheet" />
@@ -1379,11 +1380,11 @@
 
 
 
-                    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+                    <script src="{{asset ('https://cdn.quilljs.com/1.3.6/quill.js')}}"></script>
 
 
 
-                    {{-- <script src="{{ asset ('plugins/toaster/toastr.min.js') }}"></script> --}}
+                    <script src="{{ asset ('plugins/toaster/toastr.min.js') }}"></script>
 
 
 
@@ -1392,17 +1393,16 @@
                     <script src="{{ asset ('js/map.js') }}"></script>
                     <script src="{{ asset ('js/custom.js') }}"></script>
 
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                    <script src="https://www.jqueryscript.net/demo/check-all-rows/dist/TableCheckAll.js"></script>
                     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
                     <script>
                         $(document).ready(function() {
                         $('.js-example-basic-single').select2();});
                     </script>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script src="https://www.jqueryscript.net/demo/check-all-rows/dist/TableCheckAll.js"></script>
-
 <script type="text/javascript">
     $(document).ready(function() {
 
