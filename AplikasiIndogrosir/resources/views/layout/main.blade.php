@@ -214,7 +214,7 @@
                     <div class="input-group input-group-sm" id="input-group-search">
                       <input type="text" autocomplete="off" name="query" id="search-input" class="form-control" placeholder="Search..." />
                       <div class="input-group-append">
-                        <button class="btn" type="button">/</button>
+                        <button class="btn" type="button"><i class="mdi mdi-magnify"></i></button>
                       </div>
                     </div>
                   </form>
@@ -1381,10 +1381,6 @@
 
 
                     <script src="{{asset ('https://cdn.quilljs.com/1.3.6/quill.js')}}"></script>
-
-
-
-                    <script src="{{ asset ('plugins/toaster/toastr.min.js') }}"></script>
 
 
 

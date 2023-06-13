@@ -1,4 +1,6 @@
 @extends('layout.main')
+@section('pagetitle', 'Dashboard')
+
 @section('hoverdashboard','active')
 @section('content')
 

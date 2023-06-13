@@ -19,7 +19,7 @@
                             <table class="table  table-hover table-strip">
                                 <thead>
                                     <tr>
-                                        <th>Foto Pegawai</th>
+                                        <th class="text-center">Foto Pegawai</th>
                                         <th>Kode Pegawai</th>
                                         <th>Nama Pegawai</th>
                                         <th>Divisi</th>
@@ -33,7 +33,7 @@
                                 <tbody>
                                     @foreach ($pegawai as $item)
                                     <tr>
-                                        <td><img src="{{asset('storage/'.$item->foto_pegawai)}}" alt="foto" width="100"></td>
+                                        <td class="text-center"><img src="{{asset('storage/'.$item->foto_pegawai)}}" alt="foto" width="50" height="50"></td>
                                         <td>{{$item -> kode_pegawai}}</td>
                                         <td>{{$item -> nama_pegawai}}</td>
                                         <td>{{$item -> divisi -> nama_divisi}}</td>
