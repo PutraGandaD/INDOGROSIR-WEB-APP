@@ -14,7 +14,7 @@
             </div>
           @endif
           <h4 class="card-title">Kontainer Barang</h4>
-          <a href="{{ route('kontainerbarang.create')}}" class="btn btn-primary">Tambah</a>
+          <a href="{{ route('kontainerbarang.create')}}" class="btn btn-primary mb-5">Tambah</a>
           <div class="table-responsive">
             <table class="table table-striped">
                 <thead>
