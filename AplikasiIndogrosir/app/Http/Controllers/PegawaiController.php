@@ -125,7 +125,7 @@ class PegawaiController extends Controller
     {
         //
         $pegawai -> delete();
-        return response ("Pegawai (s) berhasil di delete",200);
+        return response ("Pegawai berhasil di delete",200);
 
     }
 }
