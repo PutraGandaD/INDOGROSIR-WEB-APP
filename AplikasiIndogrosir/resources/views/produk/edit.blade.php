@@ -64,6 +64,13 @@
                     <span class="text-danger">{{ $message }} </span>
                 @enderror
               </div>
+              <div class="form-group">
+                <label for="stok_produk">Stok</label>
+                <input type="text" class="form-control" name="stok_produk" placeholder="Stok Produk" value="{{ $produk->stok_produk }}">
+                @error('stok_produk')
+                    <span class="text-danger">{{ $message }} </span>
+                @enderror
+              </div>
               <button type="submit" class="btn btn-primary me-2 mt-3">Simpan</button>
               <a href="{{ route('produk.index')}}" class="btn btn-light mt-3">Batal</button>
             </form>

@@ -43,7 +43,8 @@ class ProdukController extends Controller
             'brand_id' => 'required',
             'foto_produk' => 'required|file|image|max:5000',
             'kontainer_id' => 'required',
-            'harga_produk' => 'required'
+            'harga_produk' => 'required',
+            'stok_produk' => 'required'
         ]);
         // dd($validasi);
 
@@ -59,6 +60,7 @@ class ProdukController extends Controller
         $produk ->foto_produk = $new_filename;
         $produk ->kontainer_id = $validasi['kontainer_id'];
         $produk ->harga_produk =  $validasi['harga_produk'];
+        $produk ->stok_produk =  $validasi['stok_produk'];
         $produk->save(); // save
         return redirect()->route('produk.index')->with('success', "Data produk ".$validasi['nama_produk']." berhasil disimpan");
     }
@@ -92,7 +94,8 @@ class ProdukController extends Controller
             'brand_id' => 'required',
             'foto_produk' => 'required|file|image|max:5000',
             'kontainer_id' => 'required',
-            'harga_produk' => 'required'
+            'harga_produk' => 'required',
+            'stok_produk' => 'required'
         ]);
 
         //
@@ -105,6 +108,7 @@ class ProdukController extends Controller
         $produk ->foto_produk = $new_filename;
         $produk ->kontainer_id = $validasi['kontainer_id'];
         $produk ->harga_produk =  $validasi['harga_produk'];
+        $produk ->stok_produk =  $validasi['stok_produk'];
 
         $produk->save(); // save
         return redirect()->route('produk.index')->with('success', "Data produk ".$validasi['nama_produk']." berhasil diedit");

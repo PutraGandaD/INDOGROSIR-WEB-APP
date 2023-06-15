@@ -17,6 +17,7 @@ return new class extends Migration
             $table->integer('harga_produk');
             $table->String('nama_produk', 50);
             $table->String('foto_produk');
+            $table->integer('stok_produk');
             // foreign key brand
             $table->uuid('brand_id');
             $table->foreign('brand_id')->references('id')->on('brand')->cascadeOnDelete()->cascadeOnUpdate();
