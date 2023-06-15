@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Shift;
 use Illuminate\Http\Request;
+use Symfony\Component\HttpKernel\Event\ViewEvent;
 
 class ShiftController extends Controller
 {
@@ -58,17 +59,29 @@ class ShiftController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Shift $shift)
     {
-        //
+        return view('shift.edit')->with('shift',$shift);
+
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Shift $shift)
     {
-        //
+        $validate = $request->validate([
+            'jam_kerja' => 'required'
+        ]);
+
+        //create object from models Shift
+        $shift -> waktu_shift = $shift->waktu_shift;
+        $shift -> jam_kerja = $validate['jam_kerja'];
+
+        $shift -> save();
+
+        return redirect()-> route('shift.index') -> with('success', 'Data Shift : has been saved!');
+
     }
 
     /**
