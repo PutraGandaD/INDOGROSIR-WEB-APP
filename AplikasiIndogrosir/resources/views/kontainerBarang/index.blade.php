@@ -20,11 +20,24 @@
                 <thead>
                     <th>Nama Kontainer</th>
                     <th>Created At</th>
+                    <th> </th>
+                    <th> </th>
                 </thead>
-                @foreach ($kontainerBarang as $item )
+                @foreach ($kontainerbarang as $item )
                 <tbody>
                     <td>{{$item -> nama_kontainer}}</td>
                     <td>{{$item -> created_at}}</td>
+                    <td>
+                        <a href="{{route('kontainerbarang.edit', $item->id)}}"><button class="btn btn-success btn-sm">Edit</button></a>
+                    </td>
+                    <td>
+                        <form method="post" class="delete-form"
+                        data-route="{{ route('kontainerbarang.destroy', $item->id) }}">
+                        @method('delete')
+                        @csrf
+                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                    </form>
+                    </td>
                 </tbody>
                 @endforeach
             </table>
