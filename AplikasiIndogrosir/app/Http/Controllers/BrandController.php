@@ -63,24 +63,43 @@ class BrandController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Brand $brand)
     {
         //
+        return view('brand.edit') -> with('brand', $brand);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Brand $brand)
     {
+        // validasi data
+        $validasi = $request->validate([
+            'nama_brand' => 'required',
+            'logo_brand' => 'required|file|image|max:5000',
+        ]);
+
         //
+        $ext = $request->logo_brand->getClientOriginalExtension();
+        $new_filename = $validasi['nama_brand'].".".$ext;
+        $request->logo_brand->storeAs('public', $new_filename);
+
+        // buat objek dari model Fakultas
+        $brand ->nama_brand = $validasi['nama_brand'];
+        $brand ->logo_brand = $new_filename;
+        $brand->save(); // save
+
+        return redirect()->route('brand.index')->with('success', "Data brand ".$validasi['nama_brand']." berhasil diedit");
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Brand $brand)
     {
         //
+        $brand -> delete();
+        return response("Data berhasil dihapus", 200);
     }
 }

@@ -13,8 +13,8 @@ class KontainerBarangController extends Controller
     public function index()
     {
         //
-        $kontainerBarang = KontainerBarang::all();
-        return view('kontainerBarang.index')->with('kontainerBarang', $kontainerBarang);
+        $kontainerbarang = KontainerBarang::all();
+        return view('kontainerbarang.index')->with('kontainerbarang', $kontainerbarang);
     }
 
     /**
@@ -36,9 +36,9 @@ class KontainerBarangController extends Controller
         ]);
 
         // buat objek dari model Kontainer Barang
-        $kontainerBarang = new KontainerBarang();
-        $kontainerBarang -> nama_kontainer = $validasi['nama_kontainer'];
-        $kontainerBarang -> save();
+        $kontainerbarang = new KontainerBarang();
+        $kontainerbarang -> nama_kontainer = $validasi['nama_kontainer'];
+        $kontainerbarang -> save();
 
         return redirect()->route('kontainerbarang.index')->with('success', "Data kontainer barang ".$validasi['nama_kontainer']." berhasil disimpan");
     }
@@ -54,24 +54,33 @@ class KontainerBarangController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(KontainerBarang $kontainerbarang)
     {
-        //
+        return view('kontainerbarang.edit') -> with('kontainerbarang', $kontainerbarang);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, KontainerBarang $kontainerbarang)
     {
-        //
+                // validasi data
+                $validasi = $request->validate([
+                    'nama_kontainer' => 'required',
+                ]);
+
+                $kontainerbarang -> nama_kontainer = $validasi['nama_kontainer'];
+                $kontainerbarang -> save();
+
+                return redirect()->route('kontainerbarang.index')->with('success', "Data Kontainer barang ".$validasi['nama_kontainer']." berhasil diedit.");
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(KontainerBarang $kontainerbarang)
     {
-        //
+        $kontainerbarang -> delete();
+        return response("Data berhasil dihapus", 200);
     }
 }
