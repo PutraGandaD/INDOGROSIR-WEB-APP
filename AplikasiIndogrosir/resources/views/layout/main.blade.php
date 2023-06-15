@@ -112,7 +112,7 @@
                    >
                     <a class="sidenav-item-link" href="{{ asset('dashboard')}}">
                       <i class="mdi mdi-briefcase-account-outline"></i>
-                      <span class="nav-text">Dasbor Produk</span>
+                      <span class="nav-text">Dashboard Perusahaan</span>
                     </a>
                   </li>
 
@@ -210,31 +210,13 @@
 
                 <!-- search form -->
                 <div class="search-form">
-                  <form action="index.html" method="get">
+                   @yield('search')
+                   {{-- <form action="index.html" method="get">
                     <div class="input-group input-group-sm" id="input-group-search">
                       <input type="text" autocomplete="off" name="query" id="search-input" class="form-control" placeholder="Search..." />
-                      <div class="input-group-append">
-                        <button class="btn" type="button"><i class="mdi mdi-magnify"></i></button>
-                      </div>
+
                     </div>
-                  </form>
-                  <ul class="dropdown-menu dropdown-menu-search">
-
-                    <li class="nav-item">
-                      <a class="nav-link" href="{{ asset('index.html')}}">Morbi leo risus</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="{{ asset('index.html')}}">Dapibus ac facilisis in</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="{{ asset('index.html')}}">Porta ac consectetur ac</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="{{ asset('index.html')}}">Vestibulum at eros</a>
-                    </li>
-
-                  </ul>
-
+                  </form> --}}
                 </div>
 
                 <ul class="nav navbar-nav">

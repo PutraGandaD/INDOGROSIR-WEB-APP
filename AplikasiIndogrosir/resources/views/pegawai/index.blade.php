@@ -2,6 +2,15 @@
 @section('pagetitle', 'Pegawai')
 @section('hoverpegawai','active')
 
+@section('search')
+<form method="GET">
+    <div class="input-group input-group-sm" id="input-group-search">
+      <input type="text" name="search" class="form-control" placeholder="Cari Pegawai ..." />
+    </div>
+  </form>
+@endsection
+
+
 @section('content')
 
 <div class="row">
@@ -59,6 +68,9 @@
                                     @endforeach
                                 </tbody>
                             </table>
+                            <div class="mt-4">
+                                {{$pegawai -> withQueryString()->links('pagination::bootstrap-5')}}
+                            </div>
                         </div>
                 </div>
 </div>

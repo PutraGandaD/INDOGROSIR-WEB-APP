@@ -12,10 +12,15 @@ class ProdukController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
-        $produk = Produk::all();
+        $keyword = $request->query('search');
+        if($keyword){
+            $produk = Produk::where('nama_produk','LIKE','%'.$keyword.'%')->paginate(2);
+        }else{
+            $produk = Produk::paginate(2); //ubah angko/ halaman
+        }
+        // $produk = Produk::all();
         return view('produk.index')->with('produk', $produk);
     }
 

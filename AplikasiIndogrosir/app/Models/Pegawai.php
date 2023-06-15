@@ -11,6 +11,17 @@ class Pegawai extends Model
     use HasFactory,HasUuids;
     protected $table ='pegawai';
 
+    //
+    protected $fillable= [
+        'kode_pegawai',
+        'nama_pegawai',
+        'foto_pegawai',
+        'alamat',
+        'nomor_hp',
+        'divisi_id',
+        'shift_id'
+    ];
+
     public function divisi(){
         return $this->belongsTo(Divisi::class,'divisi_id');
     }

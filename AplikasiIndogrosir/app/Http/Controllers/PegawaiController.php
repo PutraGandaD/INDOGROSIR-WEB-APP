@@ -12,10 +12,15 @@ class PegawaiController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
-        $pegawai = Pegawai::all();
+        $keyword = $request->query('search');
+        if($keyword){
+            $pegawai = Pegawai::where('nama_pegawai','LIKE','%'.$keyword.'%')->paginate(2);
+        }else{
+            $pegawai = Pegawai::paginate(2);
+        }
+
         return view('pegawai.index')->with('pegawai',$pegawai);
 
     }

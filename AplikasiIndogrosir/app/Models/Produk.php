@@ -11,6 +11,16 @@ class Produk extends Model
     use HasFactory, HasUuids;
     protected $table = 'produk';
 
+    //search
+    protected $fillable=[
+        'harga_produk',
+        'nama_produk',
+        'foto_produk',
+        'stok_produk',
+        'brand_id',
+        'kontainer_id'
+    ];
+
     public function brand(){
         return $this->belongsTo(Brand::class,'brand_id');
     }
