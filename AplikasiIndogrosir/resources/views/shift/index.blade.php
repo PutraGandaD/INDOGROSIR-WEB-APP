@@ -15,7 +15,7 @@
                             </div>
                             @endif
                             <h1 class="mt-5 mb-5">SHIFT Pegawai PT. INDOMARCO PRISMATAMA PALEMBANG</h1>
-                         {{-- <a href="{{route('shift.create')}}" class="btn btn-primary btn-rounded mb-5">Tambah Shift</a> --}}
+                                <a href="{{route('shift.create')}}" class="btn btn-primary btn-rounded mb-5">Tambah Shift</a>
                             <div class="table-responsive">
                                 <table class="table table-hover table-strip">
                                     <thead>
@@ -31,9 +31,13 @@
                                         <tr>
                                             <td>{{$item -> waktu_shift}}</td>
                                             <td>{{$item -> jam_kerja}}</td>
-                                            <td><a href="{{route ('shift.edit', $item->id)}}">
-                                                <button class="btn btn-success btn-sm">Edit</button>
-                                            </a></td>
+                                            <td>
+                                                <div class="d-flex justify-content-end">
+                                                <a href="{{route ('shift.edit', $item->id)}}">
+                                                    <button class="btn btn-success btn-sm">Edit</button>
+                                                </a>
+                                            </div>
+                                            </td>
                                         </tr>
                                         @endforeach
                                     </tbody>

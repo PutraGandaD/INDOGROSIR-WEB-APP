@@ -59,6 +59,7 @@ class PegawaiController extends Controller
         $pegawai -> alamat = $validate['alamat'];
         $pegawai -> nomor_hp= $validate['nomor_hp'];
 
+
         $pegawai -> save();
         return redirect()->route('pegawai.index')->with('success','Data Pegawai '.$validate['nama_pegawai'].' Berhasil di Simpan!');
 
@@ -75,17 +76,46 @@ class PegawaiController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Pegawai $pegawai)
     {
-        //
+        $divisi =Divisi::orderBy('nama_divisi','ASC')->get();
+        $shift = Shift::orderBy('waktu_shift','ASC')->get();
+
+        return view('pegawai.edit')
+        ->with('pegawai',$pegawai)
+        ->with('divisi',$divisi)
+        ->with('shift',$shift);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Pegawai $pegawai)
     {
-        //
+        $validate = $request->validate([
+            'foto_pegawai' => 'required|file|image|max:5000',
+            'nama_pegawai'=>'required',
+            'divisi_id'=>'required',
+            'shift_id'=>'required',
+            'alamat'=>'required',
+            'nomor_hp'=>'required'
+        ]);
+
+        $ext = $request->foto_pegawai->getClientOriginalExtension();
+        $new_filename = $pegawai->kode_pegawai.".".$ext;
+        $request->foto_pegawai->storeAs('public',$new_filename);
+
+        $pegawai ->foto_pegawai =$new_filename;
+        $pegawai ->nama_pegawai = $validate['nama_pegawai'];
+        $pegawai -> divisi_id = $validate['divisi_id'];
+        $pegawai -> shift_id =$validate['shift_id'];
+        $pegawai -> alamat = $validate['alamat'];
+        $pegawai -> nomor_hp= $validate['nomor_hp'];
+
+
+        $pegawai -> save();
+        return redirect()->route('pegawai.index')->with('success','Data Pegawai '.$validate['nama_pegawai'].' Berhasil di Simpan!');
+
     }
 
     /**

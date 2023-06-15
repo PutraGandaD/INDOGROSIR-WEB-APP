@@ -35,7 +35,7 @@
                 @foreach ($brand as $item)
                     <div class="col-lg-4">
                         <div class="card mb-5">
-                            <img width=414" height="250" src="{{ $item->logo_brand ? asset('storage/' . $item->logo_brand) : asset('images/faces/face5.jpg') }}">
+                            <img src="{{ $item->logo_brand ? asset('storage/' . $item->logo_brand) : asset('images/faces/face5.jpg') }}">
                             <div class="card-body">
                                 <h5 class="card-title">{{$item -> nama_brand}}</h5>
                                 <div class="d-flex justify-content-between">

@@ -4,7 +4,6 @@
 @section('pagetitle', 'Divisi')
 @section('content')
 
-
     <div class="row">
         <div class="col-lg-12 grid-margin stretch-card">
             <div class="card">
@@ -32,7 +31,8 @@
                                             <td>{{$item -> nama_divisi}}</td>
                                             <td>{{$item -> bagian_divisi}}</td>
                                             <td>
-                                                <div class="d-flex justify-content">
+                                                <div class="d-flex justify-content-end">
+                                                    <a href="{{route ('divisi.edit',$item->id)}}"><button class="btn btn-success btn-sm mx-3">Edit</button></a>
 
                                                     <form class="delete-form" data-route="{{route('divisi.destroy',$item->id)}}" method="POST" >
                                                         @method('delete')

@@ -62,17 +62,28 @@ class DivisiController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Divisi $divisi)
     {
-        //
+        return view('divisi.edit')->with('divisi',$divisi);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Divisi $divisi)
     {
-        //
+        $validate = $request->validate([
+            'nama_divisi' => 'required',
+            'bagian_divisi' => 'required'
+        ]);
+
+        //create object from models divisi
+        $divisi -> nama_divisi = $validate['nama_divisi'];
+        $divisi -> bagian_divisi = $validate['bagian_divisi'];
+        $divisi -> save();
+
+        return redirect()-> route('divisi.index') -> with('success', 'Data Divisi '.$validate['nama_divisi'].' has been saved!');
+
     }
 
     /**

@@ -19,13 +19,14 @@
                             <table class="table  table-hover table-strip">
                                 <thead>
                                     <tr>
-                                        <th class="text-center">Foto Pegawai</th>
+                                        <th>Foto Pegawai</th>
                                         <th>Kode Pegawai</th>
                                         <th>Nama Pegawai</th>
                                         <th>Divisi</th>
                                         <th>Shift</th>
                                         <th>Alamat</th>
                                         <th>Nomor Telp</th>
+                                        <th>Tanggal Masuk</th>
                                         <th></th>
                                     </tr>
 
@@ -40,8 +41,11 @@
                                         <td>{{$item -> shift -> waktu_shift}}</td>
                                         <td>{{$item -> alamat}}</td>
                                         <td>{{$item -> nomor_hp}}</td>
+                                        <td>{{\Carbon\Carbon::parse($item->created_at)->isoFormat('DD MMM YYYY')}}</td>
                                         <td>
-                                             <div class="d-flex justify-content">
+                                             <div class="d-flex justify-content-end">
+                                                    <a href="{{route ('pegawai.edit',$item->id)}}"><button class="btn btn-success btn-sm mx-3">Edit</button></a>
+
 
                                                     <form class="delete-form" data-route="{{route('pegawai.destroy',$item->id)}}" method="POST" >
                                                         @method('delete')
