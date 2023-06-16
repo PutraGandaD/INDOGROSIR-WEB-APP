@@ -28,7 +28,7 @@
                             <table class="table  table-hover table-strip">
                                 <thead>
                                     <tr>
-                                        <th>Foto Pegawai</th>
+                                        <th></th>
                                         <th>Kode Pegawai</th>
                                         <th>Nama Pegawai</th>
                                         <th>Divisi</th>
