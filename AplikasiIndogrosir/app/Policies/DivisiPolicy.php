@@ -13,7 +13,9 @@ class DivisiPolicy
      */
     public function viewAny(User $user): bool
     {
-        return $user->role ==='A';
+        return in_array($user->role,[
+            'A','U'
+        ]);
     }
 
     /**
@@ -25,7 +27,7 @@ class DivisiPolicy
     }
 
     /**
-     * Determine whether the user can create models.
+     * Determine whcether the user can create models.
      */
     public function create(User $user): bool
     {

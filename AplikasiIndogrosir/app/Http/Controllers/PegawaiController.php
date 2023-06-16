@@ -41,6 +41,8 @@ class PegawaiController extends Controller
      */
     public function store(Request $request)
     {
+        $this->authorize('create',Pegawai::class);
+
         $validate = $request->validate([
             'foto_pegawai'=>'required|file|image|max:5000',
             'kode_pegawai'=>'required',
@@ -83,6 +85,8 @@ class PegawaiController extends Controller
      */
     public function edit(Pegawai $pegawai)
     {
+
+
         $divisi =Divisi::orderBy('nama_divisi','ASC')->get();
         $shift = Shift::orderBy('waktu_shift','ASC')->get();
 
@@ -97,6 +101,8 @@ class PegawaiController extends Controller
      */
     public function update(Request $request, Pegawai $pegawai)
     {
+        $this->authorize('update',$pegawai);
+
         $validate = $request->validate([
             'foto_pegawai' => 'required|file|image|max:5000',
             'nama_pegawai'=>'required',
@@ -128,6 +134,8 @@ class PegawaiController extends Controller
      */
     public function destroy(Pegawai $pegawai)
     {
+        $this->authorize('delete',$pegawai);
+
         //
         $pegawai -> delete();
         return response ("Pegawai berhasil di delete",200);

@@ -31,6 +31,9 @@ class ShiftController extends Controller
      */
     public function store(Request $request)
     {
+
+        $this->authorize('create',Shift::class);
+
         $validate = $request->validate([
             'waktu_shift' => 'required',
             'jam_kerja' => 'required'
@@ -70,6 +73,8 @@ class ShiftController extends Controller
      */
     public function update(Request $request, Shift $shift)
     {
+        $this->authorize('update',$shift);
+
         $validate = $request->validate([
             'jam_kerja' => 'required'
         ]);

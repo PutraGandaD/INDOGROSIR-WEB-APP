@@ -34,7 +34,10 @@
                                             <td>
                                                 <div class="d-flex justify-content-end">
                                                 <a href="{{route ('shift.edit', $item->id)}}">
+                                                    @can('update',$item)
+
                                                     <button class="btn btn-success btn-sm">Edit</button>
+                                                    @endcan
                                                 </a>
                                             </div>
                                             </td>

@@ -36,6 +36,8 @@ class DivisiController extends Controller
      */
     public function store(Request $request)
     {
+        $this->authorize('create',Divisi::class);
+
         $validate = $request->validate([
             'nama_divisi' => 'required',
             'bagian_divisi' => 'required'
@@ -72,6 +74,8 @@ class DivisiController extends Controller
      */
     public function update(Request $request, Divisi $divisi)
     {
+        $this->authorize('update',$divisi);
+
         $validate = $request->validate([
             'nama_divisi' => 'required',
             'bagian_divisi' => 'required'
@@ -92,6 +96,8 @@ class DivisiController extends Controller
     public function destroy(Divisi $divisi)
 
     {
+        $this->authorize('delete',$divisi);
+
         $divisi -> delete();
         return response("divisi(s) berhasil di delete",200);
         // return redirect()->route('divisi.index')-> with('success','data berhasil dihapus');

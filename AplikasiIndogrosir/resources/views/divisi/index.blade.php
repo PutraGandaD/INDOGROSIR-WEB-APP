@@ -14,7 +14,9 @@
                             </div>
                             @endif
                             <h1 class="mt-5 mb-5">halaman Divisi PT. INDOMARCO PRISMATAMA PALEMBANG</h1>
-                         <a href="{{route('divisi.create')}}" class="btn btn-primary btn-rounded mb-5">Tambah Divisi</a>
+
+                                <a href="{{route('divisi.create')}}" class="btn btn-primary btn-rounded mb-5">Tambah Divisi</a>
+
                             <div class="table-responsive">
                                 <table class="table  table-hover table-strip">
                                     <thead>
@@ -32,12 +34,16 @@
                                             <td>{{$item -> bagian_divisi}}</td>
                                             <td>
                                                 <div class="d-flex justify-content-end">
-                                                    <a href="{{route ('divisi.edit',$item->id)}}"><button class="btn btn-success btn-sm mx-3">Edit</button></a>
+                                                    @can('update',$item)
+                                                         <a href="{{route ('divisi.edit',$item->id)}}"><button class="btn btn-success btn-sm mx-3">Edit</button></a>
+                                                    @endcan
 
                                                     <form class="delete-form" data-route="{{route('divisi.destroy',$item->id)}}" method="POST" >
                                                         @method('delete')
                                                         @csrf
-                                                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                                        @can('delete',$item)
+                                                             <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                                        @endcan
                                                     </form>
                                                 </div>
                                             </td>

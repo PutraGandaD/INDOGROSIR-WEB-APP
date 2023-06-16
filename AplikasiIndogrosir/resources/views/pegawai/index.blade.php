@@ -59,7 +59,10 @@
                                                     <form class="delete-form" data-route="{{route('pegawai.destroy',$item->id)}}" method="POST" >
                                                         @method('delete')
                                                         @csrf
+                                                        @can('delete',$item)
+
                                                         <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                                        @endcan
                                                     </form>
                                                 </div>
                                         </td>
