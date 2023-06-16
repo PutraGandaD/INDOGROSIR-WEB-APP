@@ -12,7 +12,7 @@
 @section('content')
     <div class="row">
         <div class="col-lg-12 grid-margin stretch-card">
-        <div class="card">
+        <div class="card ">
             <div class="card-body">
             @if (Session::get('success'))
                 <div class="alert alert-success">
@@ -20,10 +20,10 @@
                 </div>
             @endif
             <h4 class="card-title">Produk</h4>
-            <a href="{{ route('produk.create')}}" class="btn btn-primary mb-5">Tambah</a>
+            <a href="{{ route('produk.create')}}" class="btn btn-primary mb-5"><i class="mdi mdi-plus-circle-outline"></i> Tambah</a>
                 <div class="row d-flex justify-content-center">
                     @foreach ($produk as $item)
-                        <div class="card mb-3 mx-5" style="max-width: 540px;">
+                        <div class="card  shadow mb-3 mx-5" style="max-width: 540px;">
                             <div class="row g-0 ">
                                 <div class="col-md-4">
                                     <img width="240" height="240"  src="{{ $item->foto_produk ? asset('storage/' . $item->foto_produk) : asset('images/faces/face5.jpg') }}">
@@ -38,12 +38,18 @@
                                             <p class="card-text">Stok {{$item -> stok_produk}}</p>
                                         </div>
                                         <div class="d-flex justify-content-between">
-                                            <a href="{{route('produk.edit', $item->id)}}"><button class="btn btn-success btn-sm">Edit</button></a>
+                                            @can('update',$item)
+
+                                            <a href="{{route('produk.edit', $item->id)}}"><button class="btn btn-success btn-sm"><i class="mdi mdi-square-edit-outline"></i> Edit</button></a>
+                                            @endcan
                                             <form method="post" class="delete-form"
                                                 data-route="{{ route('produk.destroy', $item->id) }}">
                                                 @method('delete')
                                                 @csrf
-                                                <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                                @can('delete',$item)
+
+                                                <button type="submit" class="btn btn-danger btn-sm"><i class="mdi mdi-trash-can-outline"></i> Delete</button>
+                                                @endcan
                                             </form>
                                         </div>
                                     </div>

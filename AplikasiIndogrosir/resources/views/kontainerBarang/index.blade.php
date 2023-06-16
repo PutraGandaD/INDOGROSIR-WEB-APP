@@ -14,30 +14,36 @@
             </div>
           @endif
           <h4 class="card-title">Kontainer Barang</h4>
-          <a href="{{ route('kontainerbarang.create')}}" class="btn btn-primary mb-5">Tambah</a>
+          <a href="{{ route('kontainerbarang.create')}}" class="btn btn-primary mb-5"><i class="mdi mdi-plus-circle-outline"></i> Tambah</a>
           <div class="table-responsive">
-            <table class="table table-striped">
+            <table class="table table-strip table-hover">
                 <thead>
                     <th>Nama Kontainer</th>
                     <th>Created At</th>
-                    <th> </th>
                     <th> </th>
                 </thead>
                 @foreach ($kontainerbarang as $item )
                 <tbody>
                     <td>{{$item -> nama_kontainer}}</td>
-                    <td>{{$item -> created_at}}</td>
+                    <td>{{\Carbon\Carbon::parse($item->created_at)->isoFormat('DD MMM YYYY')}}</td>
                     <td>
-                        <a href="{{route('kontainerbarang.edit', $item->id)}}"><button class="btn btn-success btn-sm">Edit</button></a>
+                        <div class="d-flex justify-content-end">
+                            @can('update',$item)
+
+                            <a href="{{route('kontainerbarang.edit', $item->id)}}"><button class="btn btn-success btn-sm mx-3"><i class="mdi mdi-square-edit-outline"></i> Edit</button></a>
+                            @endcan
+                            <form method="post" class="delete-form"
+                            data-route="{{ route('kontainerbarang.destroy', $item->id) }}">
+                            @method('delete')
+                            @csrf
+                            @can('delete',$item)
+
+                            <button type="submit" class="btn btn-danger btn-sm"><i class="mdi mdi-trash-can-outline"></i> Delete</button>
+                            @endcan
+                             </form>
+                        </div>
                     </td>
-                    <td>
-                        <form method="post" class="delete-form"
-                        data-route="{{ route('kontainerbarang.destroy', $item->id) }}">
-                        @method('delete')
-                        @csrf
-                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
-                    </form>
-                    </td>
+
                 </tbody>
                 @endforeach
             </table>

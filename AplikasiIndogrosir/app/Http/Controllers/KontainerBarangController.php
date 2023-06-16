@@ -22,6 +22,7 @@ class KontainerBarangController extends Controller
      */
     public function create()
     {
+
         return view('kontainerBarang.create');
     }
 
@@ -30,6 +31,8 @@ class KontainerBarangController extends Controller
      */
     public function store(Request $request)
     {
+        $this->authorize('create',KontainerBarang::class);
+
         // validasi data
         $validasi = $request->validate([
             'nama_kontainer' => 'required',
@@ -64,6 +67,8 @@ class KontainerBarangController extends Controller
      */
     public function update(Request $request, KontainerBarang $kontainerbarang)
     {
+        $this->authorize('update',$kontainerbarang);
+
                 // validasi data
                 $validasi = $request->validate([
                     'nama_kontainer' => 'required',
@@ -80,6 +85,8 @@ class KontainerBarangController extends Controller
      */
     public function destroy(KontainerBarang $kontainerbarang)
     {
+        $this->authorize('delete',$kontainerbarang);
+
         $kontainerbarang -> delete();
         return response("Data berhasil dihapus", 200);
     }

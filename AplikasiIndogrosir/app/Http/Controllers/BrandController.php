@@ -30,6 +30,8 @@ class BrandController extends Controller
      */
     public function store(Request $request)
     {
+        $this->authorize('create',Brand::class);
+
         //dd($request);
 
         // validasi data
@@ -74,6 +76,8 @@ class BrandController extends Controller
      */
     public function update(Request $request, Brand $brand)
     {
+        $this->authorize('update',$brand);
+
         // validasi data
         $validasi = $request->validate([
             'nama_brand' => 'required',
@@ -98,6 +102,8 @@ class BrandController extends Controller
      */
     public function destroy(Brand $brand)
     {
+        $this->authorize('delete',$brand);
+
         //
         $brand -> delete();
         return response("Data berhasil dihapus", 200);

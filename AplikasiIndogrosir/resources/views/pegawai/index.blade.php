@@ -23,7 +23,7 @@
                         </div>
                         @endif
                         <h1 class="mt-5 mb-5">halaman Pegawai PT. INDOMARCO PRISMATAMA PALEMBANG</h1>
-                     <a href="{{route('pegawai.create')}}" class="btn btn-primary btn-rounded mb-5">Tambah Pegawai</a>
+                     <a href="{{route('pegawai.create')}}" class="btn btn-primary btn-rounded mb-5"><i class="mdi mdi-plus-circle-outline"></i> Tambah Pegawai</a>
                         <div class="table-responsive">
                             <table class="table  table-hover table-strip">
                                 <thead>
@@ -53,7 +53,7 @@
                                         <td>{{\Carbon\Carbon::parse($item->created_at)->isoFormat('DD MMM YYYY')}}</td>
                                         <td>
                                              <div class="d-flex justify-content-end">
-                                                    <a href="{{route ('pegawai.edit',$item->id)}}"><button class="btn btn-success btn-sm mx-3">Edit</button></a>
+                                                    <a href="{{route ('pegawai.edit',$item->id)}}"><button class="btn btn-success btn-sm mx-3"><i class="mdi mdi-square-edit-outline"></i> Edit</button></a>
 
 
                                                     <form class="delete-form" data-route="{{route('pegawai.destroy',$item->id)}}" method="POST" >
@@ -61,7 +61,7 @@
                                                         @csrf
                                                         @can('delete',$item)
 
-                                                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                                        <button type="submit" class="btn btn-danger btn-sm"><i class="mdi mdi-trash-can-outline"></i>  Delete</button>
                                                         @endcan
                                                     </form>
                                                 </div>

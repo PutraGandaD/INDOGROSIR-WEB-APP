@@ -15,7 +15,7 @@
             </div>
           @endif
           <h4 class="card-title">Brand</h4>
-          <a href="{{ route('brand.create')}}" class="btn btn-primary mb-5">Tambah</a>
+          <a href="{{ route('brand.create')}}" class="btn btn-primary mb-5"><i class="mdi mdi-plus-circle-outline"></i> Tambah</a>
           {{-- <div class="table-responsive">
             <table class="table table-striped">
                 <thead>
@@ -34,17 +34,23 @@
             <div class="row">
                 @foreach ($brand as $item)
                     <div class="col-lg-4">
-                        <div class="card mb-5">
+                        <div class="card shadow mb-5">
                             <img src="{{ $item->logo_brand ? asset('storage/' . $item->logo_brand) : asset('images/faces/face5.jpg') }}">
                             <div class="card-body">
                                 <h5 class="card-title">{{$item -> nama_brand}}</h5>
                                 <div class="d-flex justify-content-between">
-                                    <a href="{{route('brand.edit', $item->id)}}"><button class="btn btn-success btn-sm">Edit</button></a>
+                                    @can('update',$item)
+
+                                    <a href="{{route('brand.edit', $item->id)}}"><button class="btn btn-success btn-sm"><i class="mdi mdi-edit-square-outline"></i> Edit</button></a>
+                                    @endcan
                                     <form method="post" class="delete-form"
                                         data-route="{{ route('brand.destroy', $item->id) }}">
                                         @method('delete')
                                         @csrf
-                                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                        @can('delete',$item)
+
+                                        <button type="submit" class="btn btn-danger btn-sm"><i class="mdi mdi-trash-can-outline"></i> Delete</button>
+                                        @endcan
                                     </form>
                                 </div>
                             </div>

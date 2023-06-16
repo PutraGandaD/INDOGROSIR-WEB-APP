@@ -39,6 +39,8 @@ class ProdukController extends Controller
      */
     public function store(Request $request)
     {
+        $this->authorize('create',KontainerBarang::class);
+
         //dd($request);
         // dd($request->nama_dekan);
 
@@ -93,6 +95,8 @@ class ProdukController extends Controller
      */
     public function update(Request $request, Produk $produk)
     {
+        $this->authorize('update',$produk);
+
         //validation
         $validasi = $request->validate([
             'nama_produk' => 'required',
@@ -124,6 +128,8 @@ class ProdukController extends Controller
      */
     public function destroy(Produk $produk)
     {
+        $this->authorize('delete',$produk);
+
         $produk -> delete();
         return response("Data berhasil dihapus", 200);
     }

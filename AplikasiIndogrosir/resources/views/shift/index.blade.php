@@ -15,7 +15,7 @@
                             </div>
                             @endif
                             <h1 class="mt-5 mb-5">SHIFT Pegawai PT. INDOMARCO PRISMATAMA PALEMBANG</h1>
-                                <a href="{{route('shift.create')}}" class="btn btn-primary btn-rounded mb-5">Tambah Shift</a>
+                                <a href="{{route('shift.create')}}" class="btn btn-primary btn-rounded mb-5"><i class="mdi mdi-plus-circle-outline"></i> Tambah Shift</a>
                             <div class="table-responsive">
                                 <table class="table table-hover table-strip">
                                     <thead>
@@ -36,7 +36,7 @@
                                                 <a href="{{route ('shift.edit', $item->id)}}">
                                                     @can('update',$item)
 
-                                                    <button class="btn btn-success btn-sm">Edit</button>
+                                                    <button class="btn btn-success btn-sm"><i class="mdi mdi-square-edit-outline"></i> Edit</button>
                                                     @endcan
                                                 </a>
                                             </div>
