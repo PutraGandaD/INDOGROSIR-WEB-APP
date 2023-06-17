@@ -16,9 +16,9 @@ class ProdukController extends Controller
     {
         $keyword = $request->query('search');
         if($keyword){
-            $produk = Produk::where('nama_produk','LIKE','%'.$keyword.'%')->paginate(2);
+            $produk = Produk::where('nama_produk','LIKE','%'.$keyword.'%')->paginate(6);
         }else{
-            $produk = Produk::paginate(2); //ubah angko/ halaman
+            $produk = Produk::paginate(6); //ubah angko/ halaman
         }
         // $produk = Produk::all();
         return view('produk.index')->with('produk', $produk);

@@ -6,6 +6,10 @@
 
     <div class="row">
         <div class="col-lg-12 grid-margin stretch-card">
+            <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+            <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js" defer></script>
+            <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
+
             <div class="card">
                 <div class="card-body">
                             @if (Session::get('success'))
@@ -18,7 +22,7 @@
                                 <a href="{{route('divisi.create')}}" class="btn btn-primary btn-rounded mb-5"><i class="mdi mdi-plus-circle-outline"></i> Tambah Divisi</a>
 
                             <div class="table-responsive">
-                                <table class="table  table-hover table-strip">
+                                <table id="example" class="table  table-hover table-strip">
                                     <thead>
                                         <tr>
                                             <th>Nama Divisi</th>
@@ -54,6 +58,15 @@
                             </div>
                     </div>
                 </div>
+
+                <script>
+                    $(document).ready(function () {
+                        $('#example ').DataTable({
+                            "lengthChange": false,
+                            "pageLength": 4
+                        });
+                    });
+                </script>
 
 @endsection
 

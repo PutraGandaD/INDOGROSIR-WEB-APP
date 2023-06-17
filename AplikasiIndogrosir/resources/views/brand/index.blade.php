@@ -1,7 +1,13 @@
 @extends('layout.main')
 @section('pagetitle', 'Brand Produk')
 @section('hoverbrand','active')
-
+@section('search')
+<form method="GET">
+    <div class="input-group input-group-sm" id="input-group-search">
+      <input type="text" name="search" class="form-control" placeholder="Cari Nama Brand ..." />
+    </div>
+  </form>
+@endsection
 
 @section('content')
 

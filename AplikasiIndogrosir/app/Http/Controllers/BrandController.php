@@ -11,9 +11,17 @@ class BrandController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $brand = Brand::all();
+        $data['brand'] = Brand::all();
+
+        $keyword = $request -> query('search');
+        if($keyword){
+            $brand = Brand::where('nama_brand','LIKE','%'.$keyword.'%')->paginate(1);
+        }else{
+            $brand = Brand::all();
+        }
+
         return view('brand.index')->with('brand', $brand);
     }
 

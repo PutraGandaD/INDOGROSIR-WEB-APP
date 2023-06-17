@@ -23,7 +23,7 @@ return new class extends Migration
             $table->foreign('brand_id')->references('id')->on('brand')->cascadeOnDelete()->cascadeOnUpdate();
             // foreign key kontainer
             $table->uuid('kontainer_id');
-            $table->foreign('kontainer_id')->references('id')->on('kontainerBarang')->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreign('kontainer_id')->references('id')->on('kontainerbarang')->cascadeOnDelete()->cascadeOnUpdate();
             $table->timestamps();
 
         });

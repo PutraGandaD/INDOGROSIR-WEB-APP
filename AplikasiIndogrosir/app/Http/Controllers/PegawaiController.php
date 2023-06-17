@@ -14,6 +14,8 @@ class PegawaiController extends Controller
      */
     public function index(Request $request)
     {
+        $data['pegawai'] = Pegawai::all();
+
         $keyword = $request->query('search');
         if($keyword){
             $pegawai = Pegawai::where('nama_pegawai','LIKE','%'.$keyword.'%')->paginate(2);

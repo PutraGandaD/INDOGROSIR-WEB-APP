@@ -5,11 +5,24 @@
 @section('content')
 
 <div class="container-fluid">
-    {{-- Brand : {{count($brand)}} <br>
-    Kontainer Barang : {{count($kontainerbarang)}} <br>
-    Produk : {{count($produk)}} <br> --}}
+    {{-- BANNER SECTION --}}
+    <div class="row pt-3">
+        <div class="col-sm">
+            <div class="card mb-1">
+                <img class="card-img-top" src="assets/img/hero-bg.jpg" height="200" alt="Card image cap">
+                <div class="card-body">
+                  <h1 class="card-title text-primary">INDOGROSIR PALEMBANG</h1>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+              </div>
+        </div>
+    </div>
+    {{-- END BANNER --}}
+
+    {{-- CHART SECTION --}}
     <div class="row">
-        <div class="col-sm-5">
+        <div class="col-sm">
             <script src="https://code.highcharts.com/highcharts.js"></script>
             <script src="https://code.highcharts.com/modules/exporting.js"></script>
             <script src="https://code.highcharts.com/modules/export-data.js"></script>
@@ -18,14 +31,20 @@
                 <div id="container"></div>
             </figure>
         </div>
-        <div class="col-sm-7 mt-3">
+
+    </div>
+    {{-- END CHART SECTION --}}
+
+    {{-- TABLE SECTION --}}
+    <div class="row">
+        <div class="col-sm mt-3">
             <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
             <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js" defer></script>
             <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
 
             <div class="card card-default">
               <div class="card-header">
-                <h2>List Produk</h2>
+                <h2 class="text-primary">PRODUK KAMI</h2>
               </div>
               <div class="card-body">
                 <table id="example" class="table table-hover table-product table-paginate" style="width:100%">
@@ -156,7 +175,7 @@
         $(document).ready(function () {
             $('#example ').DataTable({
                 "lengthChange": false,
-                "pageLength": 5
+                "pageLength": 4
             });
         });
     </script>

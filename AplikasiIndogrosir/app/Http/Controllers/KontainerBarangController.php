@@ -23,7 +23,7 @@ class KontainerBarangController extends Controller
     public function create()
     {
 
-        return view('kontainerBarang.create');
+        return view('kontainerbarang.create');
     }
 
     /**
