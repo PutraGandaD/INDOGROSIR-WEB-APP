@@ -28,7 +28,9 @@
                         </div>
                         @endif
                         <h1 class="mt-5 mb-5">halaman Pegawai PT. INDOMARCO PRISMATAMA PALEMBANG</h1>
-                     <a href="{{route('pegawai.create')}}" class="btn btn-primary btn-rounded mb-5"><i class="mdi mdi-plus-circle-outline"></i> Tambah Pegawai</a>
+                        @if (Auth::user()->role ==='A')
+                            <a href="{{route('pegawai.create')}}" class="btn btn-primary btn-rounded mb-5"><i class="mdi mdi-plus-circle-outline"></i> Tambah Pegawai</a>
+                        @endif
                         <div class="table-responsive">
                             <table id="example2" class="table  table-hover table-product table-paginate table-strip">
 

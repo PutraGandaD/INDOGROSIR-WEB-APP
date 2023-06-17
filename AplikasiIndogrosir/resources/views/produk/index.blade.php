@@ -20,7 +20,9 @@
                 </div>
             @endif
             <h4 class="card-title">Produk</h4>
-            <a href="{{ route('produk.create')}}" class="btn btn-primary mb-5"><i class="mdi mdi-plus-circle-outline"></i> Tambah</a>
+            @if (Auth::user()->role ==='A')
+                <a href="{{ route('produk.create')}}" class="btn btn-primary mb-5"><i class="mdi mdi-plus-circle-outline"></i> Tambah</a>
+            @endif
                 <div class="row d-flex justify-content-center">
                     @foreach ($produk as $item)
                         <div class="card  shadow mb-3 mx-5" style="max-width: 540px;">

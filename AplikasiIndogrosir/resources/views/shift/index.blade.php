@@ -15,7 +15,9 @@
                             </div>
                             @endif
                             <h1 class="mt-5 mb-5">SHIFT Pegawai PT. INDOMARCO PRISMATAMA PALEMBANG</h1>
-                                <a href="{{route('shift.create')}}" class="btn btn-primary btn-rounded mb-5"><i class="mdi mdi-plus-circle-outline"></i> Tambah Shift</a>
+                            @if (Auth::user()->role ==='A')
+                             <a href="{{route('shift.create')}}" class="btn btn-primary btn-rounded mb-5"><i class="mdi mdi-plus-circle-outline"></i> Tambah Shift</a>
+                            @endif
                             <div class="table-responsive">
                                 <table class="table table-hover table-strip">
                                     <thead>

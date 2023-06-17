@@ -21,7 +21,9 @@
             </div>
           @endif
           <h4 class="card-title">Brand</h4>
-          <a href="{{ route('brand.create')}}" class="btn btn-primary mb-5"><i class="mdi mdi-plus-circle-outline"></i> Tambah</a>
+          @if (Auth::user()->role ==='A')
+            <a href="{{ route('brand.create')}}" class="btn btn-primary mb-5"><i class="mdi mdi-plus-circle-outline"></i> Tambah</a>
+          @endif
           {{-- <div class="table-responsive">
             <table class="table table-striped">
                 <thead>
@@ -37,10 +39,10 @@
                 </tbody>
                 @endforeach
             </table> --}}
-            <div class="row">
+            <div class="row justify-content-center">
                 @foreach ($brand as $item)
                     <div class="col-lg-4">
-                        <div class="card shadow mb-5">
+                        <div class="card shadow mb-5 justify-content-center">
                             <img src="{{ $item->logo_brand ? asset('storage/' . $item->logo_brand) : asset('images/faces/face5.jpg') }}">
                             <div class="card-body">
                                 <h5 class="card-title">{{$item -> nama_brand}}</h5>

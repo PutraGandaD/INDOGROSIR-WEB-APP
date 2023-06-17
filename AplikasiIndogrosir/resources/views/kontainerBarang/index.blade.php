@@ -14,7 +14,9 @@
             </div>
           @endif
           <h4 class="card-title">Kontainer Barang</h4>
-          <a href="{{ route('kontainerbarang.create')}}" class="btn btn-primary mb-5"><i class="mdi mdi-plus-circle-outline"></i> Tambah</a>
+          @if (Auth::user()->role ==='A')
+             <a href="{{ route('kontainerbarang.create')}}" class="btn btn-primary mb-5"><i class="mdi mdi-plus-circle-outline"></i> Tambah</a>
+          @endif
           <div class="table-responsive">
             <table class="table table-strip table-hover">
                 <thead>
