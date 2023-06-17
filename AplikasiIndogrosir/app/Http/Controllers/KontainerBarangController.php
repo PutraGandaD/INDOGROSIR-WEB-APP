@@ -33,6 +33,7 @@ class KontainerBarangController extends Controller
     {
         $this->authorize('create',KontainerBarang::class);
 
+
         // validasi data
         $validasi = $request->validate([
             'nama_kontainer' => 'required',
@@ -67,7 +68,7 @@ class KontainerBarangController extends Controller
      */
     public function update(Request $request, KontainerBarang $kontainerbarang)
     {
-        $this->authorize('update',$kontainerbarang);
+                $this->authorize('update',$kontainerbarang);
 
                 // validasi data
                 $validasi = $request->validate([

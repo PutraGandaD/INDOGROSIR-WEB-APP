@@ -30,7 +30,7 @@
                         <div class="d-flex justify-content-end">
                             @can('update',$item)
 
-                            <a href="{{route('kontainerbarang.edit', $item->id)}}"><button class="btn btn-success btn-sm mx-3"><i class="mdi mdi-square-edit-outline"></i> Edit</button></a>
+                                <a href="{{route('kontainerbarang.edit', $item->id)}}"><button class="btn btn-success btn-sm mx-3"><i class="mdi mdi-square-edit-outline"></i> Edit</button></a>
                             @endcan
                             <form method="post" class="delete-form"
                             data-route="{{ route('kontainerbarang.destroy', $item->id) }}">

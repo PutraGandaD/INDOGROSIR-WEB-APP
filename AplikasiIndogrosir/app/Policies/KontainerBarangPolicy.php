@@ -6,7 +6,7 @@ use App\Models\KontainerBarang;
 use App\Models\User;
 use Illuminate\Auth\Access\Response;
 
-class KontainerPolicy
+class KontainerBarangPolicy
 {
     /**
      * Determine whether the user can view any models.
