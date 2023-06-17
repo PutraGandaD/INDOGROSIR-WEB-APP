@@ -18,9 +18,9 @@ class PegawaiController extends Controller
 
         $keyword = $request->query('search');
         if($keyword){
-            $pegawai = Pegawai::where('nama_pegawai','LIKE','%'.$keyword.'%')->paginate(2);
+            $pegawai = Pegawai::where('nama_pegawai','LIKE','%'.$keyword.'%')->paginate(25);
         }else{
-            $pegawai = Pegawai::paginate(2);
+            $pegawai = Pegawai::paginate(25);
         }
 
         return view('pegawai.index')->with('pegawai',$pegawai);

@@ -9,11 +9,13 @@
     <div class="row pt-3">
         <div class="col-sm">
             <div class="card mb-1">
-                <img class="card-img-top" src="assets/img/hero-bg.jpg" height="200" alt="Card image cap">
+
+                <img class="card-img-top" src="assets/img/hero-bg.jpg" height="300" alt="Card image cap">
                 <div class="card-body">
-                  <h1 class="card-title text-primary">INDOGROSIR PALEMBANG</h1>
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                  <h1 class="card-title text-primary fw-bold">INDOGROSIR PALEMBANG</h1>
+                  <p class="card-text">Indogrosir adalah toko retail yang tersebar di kota-kota besar di Indonesia, yang menyediakan barang dagangan untuk para UMKM atau Pedagang eceran seperti warung, toko kelontong, minimarket (retail) dan juga menyediakan barang untuk kebutuhan sehari-hari bagi semua masyarakat umum (End user).
+                  </p>
+                  <p class="card-text text-end"><small class="text-muted">support kami www.indogrosir.co.id</small></p>
                 </div>
               </div>
         </div>
@@ -22,7 +24,7 @@
 
     {{-- CHART SECTION --}}
     <div class="row">
-        <div class="col-sm">
+        <div class="col-sm-6">
             <script src="https://code.highcharts.com/highcharts.js"></script>
             <script src="https://code.highcharts.com/modules/exporting.js"></script>
             <script src="https://code.highcharts.com/modules/export-data.js"></script>
@@ -30,7 +32,22 @@
             <figure class="highcharts-figureone">
                 <div id="container"></div>
             </figure>
+
+
         </div>
+        <div class="col-sm-6">
+            <script src="https://code.highcharts.com/highcharts.js"></script>
+            <script src="https://code.highcharts.com/modules/exporting.js"></script>
+            <script src="https://code.highcharts.com/modules/export-data.js"></script>
+            <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+            <figure class="highcharts-figure">
+                <div id="containerr"></div>
+
+            </figure>
+        </div>
+
+
 
     </div>
     {{-- END CHART SECTION --}}
@@ -120,6 +137,55 @@
         .highcharts-data-table tr:hover {
             background: #f1f7ff;
         }
+        /* pegawai */
+
+        .highcharts-figure,
+        .highcharts-data-table table {
+            min-width: 310px;
+            max-width: 800px;
+            margin: 1em auto;
+        }
+
+        #containerr {
+            height: 400px;
+        }
+
+        .highcharts-data-table table {
+            font-family: Verdana, sans-serif;
+            border-collapse: collapse;
+            border: 1px solid #ebebeb;
+            margin: 10px auto;
+            text-align: center;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .highcharts-data-table caption {
+            padding: 1em 0;
+            font-size: 1.2em;
+            color: #555;
+        }
+
+        .highcharts-data-table th {
+            font-weight: 600;
+            padding: 0.5em;
+        }
+
+        .highcharts-data-table td,
+        .highcharts-data-table th,
+        .highcharts-data-table caption {
+            padding: 0.5em;
+        }
+
+        .highcharts-data-table thead tr,
+        .highcharts-data-table tr:nth-child(even) {
+            background: #f8f8f8;
+        }
+
+        .highcharts-data-table tr:hover {
+            background: #f1f7ff;
+        }
+
     </style>
 
     <script>
@@ -169,13 +235,62 @@
                 }
             ]
         });
+
+        // pegawai
+        Highcharts.chart('containerr', {
+    chart: {
+        type: 'column'
+    },
+    title: {
+        text: 'Statistik Pegawai Indogrosir'
+    },
+    subtitle: {
+        text: 'Total Pegawai : {{count($pegawai)}}'
+    },
+    xAxis: {
+        categories: [
+            @foreach ($pegawaidivisi as $item)
+                '{{$item->nama_divisi}}',
+            @endforeach
+        ],
+        crosshair: true
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: 'Data (pegawai)'
+        }
+    },
+    tooltip: {
+        headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+        pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+            '<td style="padding:0"><b>{point.y:.1f} </b></td></tr>',
+        footerFormat: '</table>',
+        shared: true,
+        useHTML: true
+    },
+    plotOptions: {
+        column: {
+            pointPadding: 0.2,
+            borderWidth: 0
+        }
+    },
+    series: [{
+        name: 'JUMLAH PEGAWAI / divisi',
+        data: [
+            @foreach ($pegawaidivisi as $item)
+                {{$item -> jumlah}},
+            @endforeach
+        ]
+    }]
+});
     </script>
 
     <script>
         $(document).ready(function () {
             $('#example ').DataTable({
                 "lengthChange": false,
-                "pageLength": 4
+                "pageLength": 3
             });
         });
     </script>
