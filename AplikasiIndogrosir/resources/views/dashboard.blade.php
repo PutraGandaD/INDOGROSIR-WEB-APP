@@ -5,22 +5,61 @@
 @section('content')
 
 <div class="container-fluid">
-    Brand : {{count($brand)}} <br>
+    {{-- Brand : {{count($brand)}} <br>
     Kontainer Barang : {{count($kontainerbarang)}} <br>
-    Produk : {{count($produk)}} <br>
+    Produk : {{count($produk)}} <br> --}}
+    <div class="row">
+        <div class="col-sm-5">
+            <script src="https://code.highcharts.com/highcharts.js"></script>
+            <script src="https://code.highcharts.com/modules/exporting.js"></script>
+            <script src="https://code.highcharts.com/modules/export-data.js"></script>
+            <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+            <figure class="highcharts-figureone">
+                <div id="container"></div>
+            </figure>
+        </div>
+        <div class="col-sm-7 mt-3">
+            <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+            <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js" defer></script>
+            <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
 
-    <script src="https://code.highcharts.com/highcharts.js"></script>
-    <script src="https://code.highcharts.com/modules/exporting.js"></script>
-    <script src="https://code.highcharts.com/modules/export-data.js"></script>
-    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
-
-    <figure class="highcharts-figure">
-        <div id="container"></div>
-    </figure>
-
+            <div class="card card-default">
+              <div class="card-header">
+                <h2>List Produk</h2>
+              </div>
+              <div class="card-body">
+                <table id="example" class="table table-hover table-product table-paginate" style="width:100%">
+                  <thead>
+                    <tr>
+                      <th></th>
+                      <th>Nama Produk</th>
+                      <th>Brand</th>
+                      <th>Kontainer</th>
+                      <th>Stok</th>
+                      <th>Harga</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    @foreach ($produk as $item)
+                        <tr>
+                            <td class="py-0">
+                                <img src="{{ $item->foto_produk ? asset('storage/' . $item->foto_produk) : asset('images/faces/face5.jpg') }}">
+                            </td>
+                            <td>{{$item -> nama_produk}}</td>
+                            <td>{{$item -> brand -> nama_brand}}</td>
+                            <td>{{$item -> kontainerbarang -> nama_kontainer}}</td>
+                            <td>{{$item -> stok_produk}}</td>
+                            <td>{{$item -> harga_produk}}</td>
+                        </tr>
+                    @endforeach
+                  </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 
     <style>
-        .highcharts-figure,
+        .highcharts-figureone,
         .highcharts-data-table table {
             min-width: 320px;
             max-width: 660px;
@@ -113,7 +152,15 @@
         });
     </script>
 
+    <script>
+        $(document).ready(function () {
+            $('#example ').DataTable({
+                "lengthChange": false,
+                "pageLength": 5
+            });
+        });
+    </script>
 
-</div>
+
 
 @endsection
