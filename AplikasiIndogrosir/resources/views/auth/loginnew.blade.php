@@ -14,7 +14,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Mono - Responsive Admin & Dashboard Template</title>
+  <title>LOGIN INDOGROSIR</title>
 
   <!-- GOOGLE FONTS -->
   <link href="https://fonts.googleapis.com/css?family=Karla:400,700|Roboto" rel="stylesheet">
@@ -31,7 +31,8 @@
 
 
   <!-- FAVICON -->
-  <link href="images/favicon.png" rel="shortcut icon" />
+  <link href="{{ asset('http://indogrosir.co.id/images/logo/igr_logo_large.png')}}" rel="icon">
+
 
   <!--
     HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
