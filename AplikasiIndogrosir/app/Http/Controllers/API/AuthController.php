@@ -2,29 +2,36 @@
 
 namespace App\Http\Controllers\API;
 
+use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
-class AuthController extends BaseController
+class AuthController extends Controller
 {
     //login
-    public function login(Request $request){
+    public function login(Request $request)
+    {
+        $validated = $request->validate([
+            'email' => 'required|string',
+            'password' => 'required|string',
+        ]);
 
-        if(Auth::attempt([
-                'email'=> $request-> email,
-                'password'=>$request->password
-                ]))
-        {
-            $user = Auth::user();
-            $result['token']= $user->createToken('MdpApp')->plainTextToken;
-            $result['name'] = $user->name;
+        $user = User::where('email', $request->email)->first();
 
-            return $this->sendSuccess($result,'Login Berhasil');
-        }else{
-            return $this->sendError('Login Gagal');
+        if (!Hash::check($request->password, $user->password)) {
+            return response()->json([
+                'message' => 'Gagal Melakukan Login!',
+            ], 422);
         }
+
+        $token = $user->createToken('IndogrosirApp')->plainTextToken;
+        return response()->json([
+            'status' => true,
+            'message' => 'Login Success',
+            'token' => $token
+        ], 200);
     }
 
     //register
@@ -40,10 +47,10 @@ class AuthController extends BaseController
         $user = User::where('email', $request->email)->first();
 
 
-            $token = $user->createToken('kelompok friends')->plainTextToken;
+            $token = $user->createToken('IndogrosirApp')->plainTextToken;
             return response()->json([
                 'status' => true,
-                'message' => 'Success',
+                'message' => 'Register Success',
                 'token' => $token
             ], 200);
     }
@@ -54,7 +61,7 @@ class AuthController extends BaseController
         Auth::user()->tokens()->delete();
         return response()->json([
             'status' => true,
-            'message' => 'Sukses berhasil logout',
+            'message' => 'Logout Success',
         ],);
     }
 }
