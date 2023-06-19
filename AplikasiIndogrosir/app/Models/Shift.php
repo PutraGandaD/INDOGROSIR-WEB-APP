@@ -11,6 +11,7 @@ class Shift extends Model
     use HasFactory,HasUuids;
     protected $table ='shift';
 
+    //allow mass assignment
     protected $fillable = [
         'waktu_shift',
         'jam_kerja',

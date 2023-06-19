@@ -1395,7 +1395,7 @@
 
         Swal.fire({
         icon: 'warning',
-            title: 'Apakah kmu yaqueen mau hapus yang ini ?',
+            title: 'Apakah kmu menghapus item ini ?',
             showDenyButton: false,
             showCancelButton: true,
             confirmButtonText: 'Yes'
@@ -1433,7 +1433,7 @@
 
         Swal.fire({
         icon: 'warning',
-            title: 'Apakah kmu yaqueen mau hapus yang ini ?',
+            title: 'Apakah anda yakin menghapus item ini?',
             showDenyButton: false,
             showCancelButton: true,
             confirmButtonText: 'Yes'
@@ -1467,11 +1467,6 @@
     })
     });
 </script>
-
-
-
-
-
 
   </body>
 </html>
