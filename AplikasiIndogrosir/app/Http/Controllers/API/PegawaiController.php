@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
+use App\Models\Pegawai;
 use Illuminate\Http\Request;
 
 class PegawaiController extends Controller
@@ -12,7 +13,11 @@ class PegawaiController extends Controller
      */
     public function index()
     {
-        //
+        return response()->json([
+            'status'=> true,
+            'message'=> 'Success Get Pegawai',
+            'data'=> Pegawai::all()
+        ]);
     }
 
     /**

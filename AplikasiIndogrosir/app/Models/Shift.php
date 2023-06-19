@@ -11,6 +11,11 @@ class Shift extends Model
     use HasFactory,HasUuids;
     protected $table ='shift';
 
+    protected $fillable = [
+        'waktu_shift',
+        'jam_kerja',
+    ];
+
     public function pegawai(){
         return $this->hasMany(Pegawai::class);
     }

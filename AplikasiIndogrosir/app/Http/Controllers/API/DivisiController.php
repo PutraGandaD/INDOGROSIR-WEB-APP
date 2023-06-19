@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
+use App\Models\Divisi;
 use Illuminate\Http\Request;
 
 class DivisiController extends Controller
@@ -12,7 +13,11 @@ class DivisiController extends Controller
      */
     public function index()
     {
-        //
+        return response()->json([
+            'status'=> true,
+            'message'=> 'Success Get Divisi',
+            'data'=> Divisi::all()
+        ]);
     }
 
     /**

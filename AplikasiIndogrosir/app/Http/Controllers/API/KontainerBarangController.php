@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
+use App\Models\KontainerBarang;
 use Illuminate\Http\Request;
 
 class KontainerBarangController extends Controller
@@ -12,7 +13,11 @@ class KontainerBarangController extends Controller
      */
     public function index()
     {
-        //
+        return response()->json([
+            'status'=> true,
+            'message'=> 'Success Get Kontainer',
+            'data'=> KontainerBarang::all()
+        ]);
     }
 
     /**
