@@ -26,6 +26,21 @@ class DivisiController extends Controller
     public function store(Request $request)
     {
         //
+        $validate = $request->validate([
+            'nama_divisi' => 'required',
+            'bagian_divisi' => 'required'
+        ]);
+
+        //create object from models divisi
+        $divisi = new Divisi();
+        $divisi -> nama_divisi = $validate['nama_divisi'];
+        $divisi -> bagian_divisi = $validate['bagian_divisi'];
+        $divisi -> save();
+
+        return response()-> json([
+            'status'=> true,
+            'message'=> 'Data Divisi Berhasil di tambah'
+        ]);
     }
 
     /**
@@ -41,7 +56,19 @@ class DivisiController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $validate = $request->validate([
+            'nama_divisi' => 'required',
+            'bagian_divisi' => 'required'
+        ]);
+
+        $divisi = Divisi::find($id);
+        $divisi -> update($validate);
+
+        return response()->json([
+            'status' => true,
+            'message' => 'Data Divisi berhasil diubah',
+        ]);
+
     }
 
     /**
@@ -49,6 +76,12 @@ class DivisiController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $divisi = Divisi::find($id);
+        $divisi->delete();
+
+        return response()->json([
+            'status' => true,
+            'message' => 'Data Divisi berhasil dihapus',
+        ]);
     }
 }

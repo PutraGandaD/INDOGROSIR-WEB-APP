@@ -11,6 +11,12 @@ class Divisi extends Model
     use HasFactory,HasUuids;
     protected $table ='divisi';
 
+    //allow mass assignment API
+    protected $fillable = [
+        'nama_divisi',
+        'bagian_divisi',
+    ];
+
     public function pegawai(){
         return $this->hasMany(Pegawai::class);
     }
