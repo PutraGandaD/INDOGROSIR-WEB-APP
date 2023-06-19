@@ -25,7 +25,24 @@ class BrandController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validasi = $request->validate([
+            'nama_brand' => 'required',
+            'logo_brand' => 'required|file|image|max:5000'
+        ]);
+
+        $ext = $request->logo_brand->getClientOriginalExtension();
+        $new_filename = $validasi['nama_brand'].".".$ext;
+        $request->logo_brand->storeAs('public', $new_filename);
+
+        $brand = new Brand();
+        $brand ->nama_brand = $validasi['nama_brand'];
+        $brand ->logo_brand = $new_filename;
+        $brand->save(); // save
+
+        return response()->json([
+            'status' => true,
+            'message' => 'Data Brand Berhasil Ditambah'
+        ]);
     }
 
     /**
@@ -41,7 +58,22 @@ class BrandController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $validasi = $request->validate([
+            'nama_brand' => 'required',
+            'logo_brand' => 'required|file|image|max:5000'
+        ]);
+
+        $brand = Brand::find($id);
+        $ext = $request->logo_brand->getClientOriginalExtension();
+        $new_filename = $validasi['nama_brand'].".".$ext;
+        $request->logo_brand->storeAs('public', $new_filename);
+
+        $brand->update($validasi); // save
+
+        return response()->json([
+            'status' => true,
+            'message' => 'Data Brand Berhasil Diupdate'
+        ]);
     }
 
     /**
@@ -49,6 +81,12 @@ class BrandController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $brand = Brand::find($id);
+        $brand -> delete();
+
+        return response()->json([
+            'status' => true,
+            'message' => 'Data Brand Berhasil Didelete'
+        ]);
     }
 }

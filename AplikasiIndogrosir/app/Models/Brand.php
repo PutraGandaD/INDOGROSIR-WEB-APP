@@ -11,6 +11,11 @@ class Brand extends Model
     use HasFactory, HasUuids;
     protected $table = 'brand';
 
+    protected $fillable = [
+        'nama_brand',
+        'logo_brand'
+    ];
+
     public function produk() {
         return $this->hasMany(Produk::class);
     }

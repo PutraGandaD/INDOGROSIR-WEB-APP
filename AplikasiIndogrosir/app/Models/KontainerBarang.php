@@ -11,6 +11,10 @@ class KontainerBarang extends Model
     use HasFactory, HasUuids;
     protected $table = 'kontainerbarang';
 
+    protected $fillable = [
+        'nama_kontainer'
+    ];
+
     public function produk() {
         return $this->hasMany(Produk::class);
     }

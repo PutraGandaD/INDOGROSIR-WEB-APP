@@ -25,7 +25,20 @@ class KontainerBarangController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // validasi data
+        $validasi = $request->validate([
+            'nama_kontainer' => 'required',
+        ]);
+
+        // buat objek dari model Kontainer Barang
+        $kontainerbarang = new KontainerBarang();
+        $kontainerbarang -> nama_kontainer = $validasi['nama_kontainer'];
+        $kontainerbarang -> save();
+
+        return response()->json([
+            'status' => true,
+            'message' => 'Data Kontainer Barang Berhasil Ditambah'
+        ]);
     }
 
     /**
@@ -41,7 +54,18 @@ class KontainerBarangController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        // validasi data
+        $validasi = $request->validate([
+            'nama_kontainer' => 'required'
+        ]);
+
+        $kontainerbarang = KontainerBarang::find($id);
+        $kontainerbarang->update($validasi);
+
+        return response()->json([
+            'status' => true,
+            'message' => 'Data Kontainer Barang Berhasil Diupdate'
+        ]);
     }
 
     /**
@@ -49,6 +73,12 @@ class KontainerBarangController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $kontainerbarang = KontainerBarang::find($id);
+        $kontainerbarang -> delete();
+
+        return response()->json([
+            'status' => true,
+            'message' => 'Data Kontainer Barang Berhasil Didelete'
+        ]);
     }
 }
