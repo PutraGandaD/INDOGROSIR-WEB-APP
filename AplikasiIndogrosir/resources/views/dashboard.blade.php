@@ -290,7 +290,7 @@
         $(document).ready(function () {
             $('#example ').DataTable({
                 "lengthChange": false,
-                "pageLength": 3
+                "pageLength": 5
             });
         });
     </script>
