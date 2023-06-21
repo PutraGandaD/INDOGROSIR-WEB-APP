@@ -42,8 +42,8 @@
             <div class="row justify-content-center">
                 @foreach ($brand as $item)
                     <div class="col-lg-4">
-                        <div class="card shadow mb-5 justify-content-center">
-                            <img src="{{ $item->logo_brand ? asset('storage/' . $item->logo_brand) : asset('images/faces/face5.jpg') }}">
+                        <div class="card shadow mb-5 justify-content-center mx-auto ratio ratio-1x1">
+                            <img width="100%" height="250" width="100%" src="{{ $item->logo_brand ? asset('storage/' . $item->logo_brand) : asset('images/faces/face5.jpg') }}">
                             <div class="card-body">
                                 <h5 class="card-title">{{$item -> nama_brand}}</h5>
                                 <div class="d-flex justify-content-between">
