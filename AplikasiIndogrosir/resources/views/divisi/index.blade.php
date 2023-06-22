@@ -17,7 +17,7 @@
                                 {{ Session::get('success')}}
                             </div>
                             @endif
-                            <h1 class="mt-5 mb-5">halaman Divisi PT. INDOMARCO PRISMATAMA PALEMBANG</h1>
+                            <h1 class="mt-5 mb-5">Divisi Pegawai PT. INDOMARCO PRISMATAMA PALEMBANG</h1>
                             @if (Auth::user()->role ==='A')
                                 <a href="{{route('divisi.create')}}" class="btn btn-primary btn-rounded mb-5"><i class="mdi mdi-plus-circle-outline"></i> Tambah Divisi</a>
                             @endif

@@ -27,7 +27,7 @@
                             {{ Session::get('success')}}
                         </div>
                         @endif
-                        <h1 class="mt-5 mb-5">halaman Pegawai PT. INDOMARCO PRISMATAMA PALEMBANG</h1>
+                        <h1 class="mt-5 mb-5">Daftar Pegawai PT. INDOMARCO PRISMATAMA PALEMBANG</h1>
                         @if (Auth::user()->role ==='A')
                             <a href="{{route('pegawai.create')}}" class="btn btn-primary btn-rounded mb-5"><i class="mdi mdi-plus-circle-outline"></i> Tambah Pegawai</a>
                         @endif
@@ -89,7 +89,7 @@
         $(document).ready(function () {
             $('#example2').DataTable({
                 "lengthChange": false,
-                "pageLength": 10,
+                "pageLength": 6,
             });
         });
     </script>
